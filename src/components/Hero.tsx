@@ -10,14 +10,13 @@ const Hero = () => {
       ></div>
       
       {/* Dark gradient overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-gradient-to-b from-lawblack-950 via-lawblack-900/95 to-lawblack-950"
         style={{ opacity: 0.95 }}
       ></div>
 
       {/* Vertical text on the left */}
       <div className="absolute left-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
-        <h3 className="text-vertical">LAWGIS</h3>
       </div>
 
       <div className="container-custom relative z-10 pt-24 pb-12">
@@ -44,7 +43,7 @@ const Hero = () => {
                   href="#contact" 
                   className="btn-primary flex items-center gap-2"
                 >
-                  Agende uma Consulta
+                  Tire sua dúvida
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 
@@ -52,7 +51,7 @@ const Hero = () => {
                   href="#about" 
                   className="btn-secondary flex items-center gap-2"
                 >
-                  Conheça Nossa Equipe
+                  Me conheça
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
@@ -62,7 +61,7 @@ const Hero = () => {
               <div className="px-4 py-2 border border-lawgold-400/30 rounded-lg flex items-center gap-3 bg-lawblack-900/50">
                 <span className="text-lawgold-400 text-xl">★★★★★</span>
                 <div className="border-l border-lawgold-400/30 pl-3">
-                  <p className="text-white text-sm">Reconhecido entre os melhores escritórios</p>
+                  <p className="text-white text-sm">Reconhecido entre os melhores escritórios de Medianeira e região</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -71,11 +70,10 @@ const Hero = () => {
           <div className="lg:w-2/5 relative">
             <AnimatedSection delay={800}>
               <img 
-                src="/images/5c710d2c-0e45-4dbe-ad87-f77bbd360d70.png" 
+                src="/images/logo.png" 
                 alt="Advogados experientes" 
                 className="w-full relative z-10 rounded-lg"
               />
-              <div className="absolute -bottom-5 -right-5 w-full h-full border-2 border-lawgold-400 rounded-lg -z-10"></div>
             </AnimatedSection>
           </div>
         </div>

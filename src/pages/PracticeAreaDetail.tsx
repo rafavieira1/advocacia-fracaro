@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Building, Home, GraduationCap, Scale, FileText, Users } from "lucide-react";
@@ -182,8 +181,11 @@ const PracticeAreaDetail = () => {
     setAreaInfo(area || null);
     
     if (area) {
-      document.title = `Lawgis - ${area.title}`;
+      document.title = `Débora B. Fracaro - ${area.title}`;
     }
+
+    // Rola a página para o topo
+    window.scrollTo(0, 0);
   }, [slug]);
 
   if (!areaInfo) {

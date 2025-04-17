@@ -1,5 +1,5 @@
-
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
@@ -9,28 +9,32 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    document.title = "Lawgis - Escritório de Advocacia";
+    document.title = "Débora B. Fracaro - Advocacia";
     
     // Handle hash navigation when coming back from detail pages
     const handleHashNavigation = () => {
-      const hash = window.location.hash;
+      const hash = window.location.hash.replace('#', '');
       if (hash) {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }
     };
     
-    // Run on mount and when hash changes
+    // Run on mount and when location changes
     handleHashNavigation();
-    window.addEventListener('hashchange', handleHashNavigation);
     
+    // Cleanup event listener
     return () => {
       window.removeEventListener('hashchange', handleHashNavigation);
     };
-  }, []);
+  }, [location]); // Adiciona location como dependência
 
   return (
     <div className="min-h-screen">

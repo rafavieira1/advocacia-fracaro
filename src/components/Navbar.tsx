@@ -1,11 +1,13 @@
-
 import { useState, useEffect } from "react";
-import { Scale } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,12 +23,25 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Início", href: "#inicio" },
-    { name: "Sobre", href: "#about" },
-    { name: "Áreas de Atuação", href: "#practice-areas" },
-    { name: "Depoimentos", href: "#testimonials" },
-    { name: "Contato", href: "#contact" }
+    { name: "Início", href: "inicio" },
+    { name: "Sobre", href: "about" },
+    { name: "Áreas de Atuação", href: "practice-areas" },
+    { name: "Depoimentos", href: "testimonials" },
+    { name: "Contato", href: "contact" }
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    if (!isHome) {
+      navigate(`/#${href}`);
+    } else {
+      const element = document.getElementById(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <header
@@ -36,17 +51,17 @@ const Navbar = () => {
       )}
     >
       <div className="container-custom flex items-center justify-between">
-        <a href="#inicio" className="flex items-center gap-2">
-          <Scale className="h-7 w-7 text-lawgold-400" />
-          <span className="text-2xl font-serif text-white">Lawgis</span>
-        </a>
+        <Link to={isHome ? "#inicio" : "/"} className="flex items-center">
+          <img src="/images/logo.png" alt="Débora B. Fracaro Advogada" className="h-12" />
+        </Link>
         
         {/* Desktop navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={`#${link.href}`}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-white/80 hover:text-lawgold-400 transition-colors text-sm font-medium"
             >
               {link.name}
@@ -56,9 +71,10 @@ const Navbar = () => {
         
         <a 
           href="#contact"
+          onClick={(e) => handleNavClick(e, "contact")}
           className="hidden md:block px-6 py-2 bg-lawgold-500 text-white rounded-full hover:bg-lawgold-600 transition-all font-medium text-sm"
         >
-          Consulta Gratuita
+          Entre em contato
         </a>
 
         {/* Mobile menu button */}
@@ -82,9 +98,12 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={link.href}
+                href={`#${link.href}`}
                 className="text-white/80 hover:text-lawgold-400 transition-colors font-medium py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, link.href);
+                  setMobileMenuOpen(false);
+                }}
               >
                 {link.name}
               </a>
@@ -92,7 +111,10 @@ const Navbar = () => {
             <a 
               href="#contact"
               className="px-6 py-2 bg-lawgold-500 text-white rounded-full hover:bg-lawgold-600 transition-all font-medium text-center mt-2"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={(e) => {
+                handleNavClick(e, "contact");
+                setMobileMenuOpen(false);
+              }}
             >
               Consulta Gratuita
             </a>

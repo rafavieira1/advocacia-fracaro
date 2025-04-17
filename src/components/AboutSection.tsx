@@ -32,7 +32,7 @@ const AboutSection = () => {
               {/* Bottom horizontal image */}
               <div className="rounded-2xl overflow-hidden w-full">
                 <img 
-                  src="/images/468411a4-4a9a-46bc-9439-816ede6379a8.png" 
+                  src="/images/aboutinferior.png" 
                   alt="Advogada em pé" 
                   className="w-full h-[280px] object-cover"
                 />
@@ -43,23 +43,27 @@ const AboutSection = () => {
             <div className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-5">
                 <div className="h-px w-12 bg-lawgold-400"></div>
-                <p className="text-lawgold-600 font-medium uppercase text-sm">SOBRE NÓS</p>
+                <h3 className="text-lawgold-600 font-medium uppercase text-sm">SOBRE</h3>
               </div>
               
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-                Excelência Jurídica com Tradição e Inovação
+              Minha Trajetória no Direito
               </h2>
               
               <p className="text-lawblack-600 mb-6">
-                Fundado há mais de duas décadas, o escritório Lawgis consolidou-se como referência 
-                no mercado jurídico brasileiro, combinando tradição, conhecimento técnico e inovação 
-                para oferecer as melhores soluções legais aos nossos clientes.
+              Sou Débora Bertolini Fracaro, advogada regularmente inscrita na OAB/PR sob o nº 101.765. 
+              Iniciei minha trajetória no Direito em 2015, com formação concluída em 2019 e aprovação na OAB ainda 
+              durante a graduação.
+              Desde então, venho atuando de forma independente, sempre pautada na ética, na responsabilidade e na busca 
+              por constante aprimoramento. Em março de 2024, fundei o Débora B. Fracaro Advocacia, com o objetivo de 
+              oferecer serviços jurídicos de qualidade e comprometimento.
               </p>
               
               <p className="text-lawblack-600 mb-8">
-                Nossa equipe de advogados altamente qualificados atua de forma estratégica, buscando 
-                resultados efetivos e construindo relacionamentos duradouros baseados na confiança, ética 
-                e excelência profissional.
+              Possuo quatro pós-graduações concluídas nas áreas de Direito do Trabalho com ênfase em auxílio acidentário, 
+              Direito Previdenciário, Direito Penal e Processo Penal, e Direito de Família e Sucessões. Atualmente, 
+              curso mais quatro especializações: Direito Civil e Processo Civil, Direito Médico e da Saúde, Execução Penal e 
+              Direito das Mulheres, além de diversos cursos complementares.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -88,23 +92,6 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <div className="mb-8 p-4 border-l-4 border-lawgold-400 bg-white rounded shadow-sm">
-                <p className="text-lawblack-800 italic">
-                  "Nosso compromisso é unir conhecimento jurídico sólido com atendimento personalizado, 
-                  garantindo soluções efetivas para os desafios legais de nossos clientes."
-                </p>
-                
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-lawgold-100 flex items-center justify-center">
-                    <span className="font-semibold text-lawgold-700">DK</span>
-                  </div>
-                  <div>
-                    <p className="font-medium">Daniyel Karlos</p>
-                    <p className="text-sm text-lawblack-500">Sócio Fundador</p>
-                  </div>
-                </div>
-              </div>
-              
               <a 
                 href="#practice-areas" 
                 className="btn-primary flex items-center gap-2 w-fit"
@@ -112,6 +99,27 @@ const AboutSection = () => {
                 Nossas Áreas de Atuação
                 <ArrowRight className="h-4 w-4" />
               </a>
+            </div>
+          </div>
+
+          {/* Quote section - Now full width and centered */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="p-8 border-l-4 border-lawgold-400 bg-white rounded shadow-sm">
+              <p className="text-lawblack-800 italic text-lg text-center">
+                "O escritório nasce com a missão de acolher e representar cada cliente com empatia, 
+                excelência técnica e responsabilidade, oferecendo soluções jurídicas personalizadas, 
+                sempre pautadas na ética e no respeito à dignidade humana."
+              </p>
+              
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <div className="h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
+                  <span className="font-semibold text-lawgold-700">DF</span>
+                </div>
+                <div>
+                  <p className="font-medium">Débora B. Fracaro</p>
+                  <p className="text-sm text-lawblack-500">Advogada</p>
+                </div>
+              </div>
             </div>
           </div>
         </AnimatedSection>
