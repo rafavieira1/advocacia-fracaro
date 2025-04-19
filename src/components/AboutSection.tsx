@@ -96,7 +96,7 @@ const AboutSection = () => {
                 href="#practice-areas" 
                 className="btn-primary flex items-center gap-2 w-fit"
               >
-                Nossas Áreas de Atuação
+                Conheça as Áreas de Atuação
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>

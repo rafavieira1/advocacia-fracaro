@@ -11,7 +11,7 @@ const Hero = () => {
       
       {/* Dark gradient overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-lawblack-950 via-lawblack-900/95 to-lawblack-950"
+        className="absolute inset-0 bg-lawblack-950"
         style={{ opacity: 0.95 }}
       ></div>
 
@@ -58,7 +58,7 @@ const Hero = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={600} className="mt-16 flex items-center">
-              <div className="px-4 py-2 border border-lawgold-400/30 rounded-lg flex items-center gap-3 bg-lawblack-900/50">
+              <div className="px-4 py-2 border border-lawgold-400/30 rounded-lg flex items-center gap-3 bg-lawblack-950">
                 <span className="text-lawgold-400 text-xl">★★★★★</span>
                 <div className="border-l border-lawgold-400/30 pl-3">
                   <p className="text-white text-sm">Reconhecido entre os melhores escritórios de Medianeira e região</p>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Building, Home, GraduationCap, Scale, FileText, Users } from "lucide-react";
+import { ArrowLeft, Scale, Home, Users, Shield, FileText, ShoppingCart } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,152 +21,152 @@ type PracticeAreaInfo = {
 
 const practiceAreasData: PracticeAreaInfo[] = [
   {
-    title: "Direito Empresarial",
-    icon: <Building className="h-10 w-10 text-lawgold-400" />,
-    slug: "direito-empresarial",
-    description: "Nossa equipe especializada entende as complexidades legais que empresas enfrentam e oferece soluções personalizadas para proteger seus interesses comerciais e garantir conformidade legal.",
+    title: "Direito Criminal",
+    icon: <Scale className="h-10 w-10 text-lawgold-400" />,
+    slug: "direito-criminal",
+    description: "Atuação na defesa de direitos e garantias individuais em investigações, processos criminais e júris, com acompanhamento desde o inquérito policial até a sentença.",
     detailedDescription: [
-      "O Direito Empresarial, também conhecido como Direito Comercial, é o ramo do Direito que regula as relações jurídicas das empresas e dos empresários no exercício de suas atividades econômicas.",
-      "Nossa equipe possui vasta experiência em questões societárias, fusões e aquisições, contratos comerciais, recuperação judicial e falências, propriedade intelectual e compliance empresarial.",
-      "Trabalhamos para proteger os interesses de nossos clientes, minimizar riscos legais e maximizar oportunidades de negócio dentro dos parâmetros legais."
+      "O Direito Penal é o ramo do Direito que define as condutas consideradas crimes e estabelece as penas aplicáveis. Nossa atuação abrange desde a fase de investigação até a execução da pena.",
+      "Atuamos na defesa de acusados em todas as fases do processo penal, incluindo inquérito policial, ação penal, recursos e execução penal. Nossa equipe está preparada para garantir seus direitos fundamentais.",
+      "Oferecemos assessoria especializada em crimes contra a vida, patrimônio, honra, liberdade individual, entre outros, sempre buscando a melhor estratégia de defesa para cada caso."
     ],
     cases: [
       {
-        title: "Reestruturação Empresarial",
-        description: "Assessoria completa em processo de reestruturação societária de grupo empresarial familiar, garantindo a sucessão sem conflitos e mantendo a integridade do patrimônio."
+        title: "Defesa em Crime Contra a Vida",
+        description: "Atuação bem-sucedida em caso de homicídio culposo, demonstrando ausência de dolo e obtendo absolvição do cliente."
       },
       {
-        title: "Recuperação Judicial",
-        description: "Condução bem-sucedida de processo de recuperação judicial para indústria de médio porte, permitindo a continuidade das atividades e preservação de empregos."
+        title: "Defesa em Crime Contra o Patrimônio",
+        description: "Representação em caso de furto qualificado, conseguindo a redução da pena e a progressão de regime prisional."
       },
       {
-        title: "Proteção de Propriedade Intelectual",
-        description: "Registro e proteção de marcas e patentes para startup tecnológica, garantindo a exclusividade de uso e proteção contra concorrência desleal."
-      }
-    ]
-  },
-  {
-    title: "Direito Imobiliário",
-    icon: <Home className="h-10 w-10 text-lawgold-400" />,
-    slug: "direito-imobiliario",
-    description: "Assessoria completa em questões de propriedade, contratos de compra e venda, locação, regularização de imóveis e resolução de conflitos relacionados a propriedades.",
-    detailedDescription: [
-      "O Direito Imobiliário engloba todas as questões jurídicas relacionadas à propriedade, posse, uso e transferência de bens imóveis, sejam residenciais, comerciais ou rurais.",
-      "Nossa equipe oferece assessoria especializada em transações imobiliárias, contratos de compra e venda, locações, usucapião, regularização fundiária, incorporações imobiliárias e resolução de disputas.",
-      "Atuamos preventivamente na análise de documentação e elaboração de contratos, assim como na representação em litígios envolvendo questões imobiliárias."
-    ],
-    cases: [
-      {
-        title: "Regularização de Loteamento",
-        description: "Regularização completa de loteamento urbano com mais de 200 unidades, solucionando pendências documentais e garantindo segurança jurídica aos proprietários."
-      },
-      {
-        title: "Disputa de Limites de Propriedade",
-        description: "Resolução de conflito de limites entre propriedades rurais, evitando litígio judicial e estabelecendo acordo satisfatório para todas as partes."
-      },
-      {
-        title: "Diligência em Grande Aquisição",
-        description: "Condução de diligência legal (due diligence) em aquisição de complexo comercial de alto valor, identificando e solucionando pendências que poderiam comprometer o negócio."
-      }
-    ]
-  },
-  {
-    title: "Direito Educacional",
-    icon: <GraduationCap className="h-10 w-10 text-lawgold-400" />,
-    slug: "direito-educacional",
-    description: "Representação jurídica para instituições de ensino e estudantes, garantindo conformidade legal e defesa de direitos educacionais em todos os níveis acadêmicos.",
-    detailedDescription: [
-      "O Direito Educacional é uma área especializada que trata das relações jurídicas no âmbito da educação, envolvendo instituições de ensino, estudantes, professores e o poder público.",
-      "Nossa equipe atua no assessoramento de instituições educacionais em questões regulatórias, processos de autorização e reconhecimento de cursos, defesa em processos administrativos e gestão de conflitos acadêmicos.",
-      "Também representamos estudantes na defesa de seus direitos educacionais, questões disciplinares e acesso a políticas de inclusão e acessibilidade."
-    ],
-    cases: [
-      {
-        title: "Credenciamento de Instituição de Ensino Superior",
-        description: "Condução bem-sucedida de processo de credenciamento de faculdade junto ao MEC, incluindo autorização de cursos e adequação à legislação educacional."
-      },
-      {
-        title: "Defesa em Processo Administrativo",
-        description: "Representação de instituição de ensino em processo administrativo sancionador, resultando em arquivamento da denúncia e preservação da reputação institucional."
-      },
-      {
-        title: "Inclusão de Aluno com Necessidades Especiais",
-        description: "Garantia judicial de direitos de acessibilidade e apoio pedagógico para estudante com deficiência, assegurando condições adequadas de aprendizagem."
+        title: "Defesa em Crime Contra a Honra",
+        description: "Atuação em processo por calúnia e difamação, obtendo a absolvição do cliente e a condenação do autor da denúncia."
       }
     ]
   },
   {
     title: "Direito Civil",
-    icon: <FileText className="h-10 w-10 text-lawgold-400" />,
+    icon: <Home className="h-10 w-10 text-lawgold-400" />,
     slug: "direito-civil",
-    description: "Orientação jurídica em questões familiares, contratos, responsabilidade civil e proteção de direitos pessoais, com foco em soluções eficientes e personalizadas.",
+    description: "Consultoria e representação em temas que envolvem obrigações, responsabilidade civil, contratos, posse e propriedade.",
     detailedDescription: [
-      "O Direito Civil é o ramo do Direito que regula as relações jurídicas entre pessoas físicas e jurídicas, abrangendo aspectos como família, contratos, responsabilidade civil, direitos de personalidade e sucessões.",
-      "Nossa equipe oferece assessoria jurídica em planejamento sucessório, inventários e partilhas, divórcios e dissolução de união estável, guarda de filhos e alimentos, indenizações por danos morais e materiais, entre outros.",
-      "Priorizamos abordagens conciliatórias e mediação, buscando soluções que minimizem desgastes emocionais e financeiros para nossos clientes."
+      "O Direito Civil é o ramo do Direito que regula as relações jurídicas entre pessoas físicas e jurídicas, abrangendo aspectos como contratos, responsabilidade civil, direitos reais e obrigações.",
+      "Nossa equipe oferece assessoria jurídica em questões contratuais, indenizações por danos morais e materiais, questões possessórias, usucapião, entre outros temas do Direito Civil.",
+      "Priorizamos soluções extrajudiciais quando possível, mas estamos preparados para atuar judicialmente quando necessário, sempre buscando a melhor estratégia para cada caso."
     ],
     cases: [
       {
-        title: "Planejamento Sucessório Familiar",
-        description: "Elaboração de plano sucessório completo para família com patrimônio diversificado, incluindo holdings familiares, testamentos e doações em vida."
+        title: "Ação de Indenização por Danos Materiais",
+        description: "Obtenção de indenização por danos materiais em acidente de trânsito, incluindo perdas e danos, lucros cessantes e despesas médicas."
       },
       {
-        title: "Acordo em Disputa de Herança",
-        description: "Mediação bem-sucedida em conflito familiar por herança, evitando litígio prolongado e preservando relações familiares."
+        title: "Regularização de Imóvel",
+        description: "Regularização de imóvel por usucapião, garantindo a segurança jurídica do proprietário após anos de posse mansa e pacífica."
       },
       {
-        title: "Indenização por Erro Médico",
-        description: "Obtenção de indenização por danos morais e materiais para vítima de erro médico, incluindo garantia de tratamento adequado e compensação financeira."
+        title: "Revisão de Contrato",
+        description: "Revisão judicial de contrato de prestação de serviços, obtendo a redução de cláusulas abusivas e garantindo o equilíbrio contratual."
       }
     ]
   },
   {
-    title: "Direito Trabalhista",
+    title: "Direito de Família e Sucessões",
     icon: <Users className="h-10 w-10 text-lawgold-400" />,
-    slug: "direito-trabalhista",
-    description: "Defesa de empregados e empregadores, assessoria em relações de trabalho, negociações sindicais e representação em processos administrativos e judiciais.",
+    slug: "direito-familia-sucessoes",
+    description: "Atendimento humanizado em questões como divórcio, guarda, pensão alimentícia, reconhecimento de união estável, inventários e partilhas.",
     detailedDescription: [
-      "O Direito Trabalhista regula as relações jurídicas entre empregados e empregadores, estabelecendo direitos e deveres para ambas as partes e buscando o equilíbrio nas relações laborais.",
-      "Nossa equipe atua tanto na defesa de trabalhadores quanto de empresas, oferecendo assessoria em contratações, demissões, compliance trabalhista, negociações coletivas e representação em litígios.",
-      "Buscamos soluções preventivas que minimizem riscos e evitem passivos trabalhistas, além de estratégias eficientes para resolução de conflitos já existentes."
+      "O Direito de Família e Sucessões trata das relações familiares e da transmissão de patrimônio após o falecimento. É uma área que exige sensibilidade e conhecimento técnico.",
+      "Atuamos em divórcios consensuais e litigiosos, guarda de filhos, regulamentação de visitas, pensão alimentícia, reconhecimento de união estável, inventários e partilhas.",
+      "Buscamos sempre soluções que preservem os laços familiares e minimizem conflitos, priorizando o diálogo e a mediação quando possível."
     ],
     cases: [
       {
-        title: "Reestruturação de Departamento",
-        description: "Assessoria completa em processo de reestruturação de departamento com redução de quadro funcional, minimizando riscos jurídicos e custos com indenizações."
+        title: "Divórcio Consensual",
+        description: "Condução de divórcio consensual com partilha amigável de bens, garantindo a satisfação de ambas as partes e a preservação da relação familiar."
       },
       {
-        title: "Negociação Coletiva",
-        description: "Condução bem-sucedida de negociação coletiva para empresa de grande porte, estabelecendo acordo favorável para empregador e trabalhadores."
+        title: "Regulamentação de Guarda",
+        description: "Estabeilização de regime de guarda compartilhada com regulamentação de visitas, priorizando o melhor interesse da criança."
       },
       {
-        title: "Reconhecimento de Vínculo Empregatício",
-        description: "Obtenção de reconhecimento judicial de vínculo empregatício em relação fraudulentamente caracterizada como prestação de serviço, garantindo todos os direitos ao trabalhador."
+        title: "Inventário e Partilha",
+        description: "Condução de inventário extrajudicial com partilha amigável de bens, evitando litígios entre os herdeiros."
       }
     ]
   },
   {
-    title: "Direito Tributário",
-    icon: <Scale className="h-10 w-10 text-lawgold-400" />,
-    slug: "direito-tributario",
-    description: "Planejamento tributário, consultoria fiscal, defesa em processos administrativos e judiciais, visando economia legal de impostos e regularização fiscal.",
+    title: "Execução Penal",
+    icon: <Shield className="h-10 w-10 text-lawgold-400" />,
+    slug: "execucao-penal",
+    description: "Acompanhamento jurídico especializado na fase de cumprimento da pena, incluindo pedidos de progressão de regime, livramento condicional e indulto.",
     detailedDescription: [
-      "O Direito Tributário trata das relações jurídicas entre o Fisco e os contribuintes, regulando a arrecadação de tributos e os limites do poder de tributar do Estado.",
-      "Nossa equipe oferece serviços de planejamento tributário, consultoria fiscal, representação em processos administrativos e judiciais tributários, recuperação de créditos tributários e regularização fiscal.",
-      "Trabalhamos para minimizar a carga tributária de nossos clientes dentro dos parâmetros legais, bem como para defender seus direitos contra cobranças indevidas ou abusivas."
+      "A Execução Penal é a fase do processo criminal em que a pena é efetivamente cumprida. É fundamental ter assessoria jurídica especializada para garantir os direitos do condenado.",
+      "Atuamos em pedidos de progressão de regime, livramento condicional, indulto, remição de pena, saídas temporárias e outros benefícios previstos na Lei de Execução Penal.",
+      "Nossa equipe está preparada para acompanhar todo o processo de execução da pena, garantindo que os direitos do condenado sejam respeitados e que ele tenha acesso a todos os benefícios legais."
     ],
     cases: [
       {
-        title: "Planejamento Tributário para Grupo Empresarial",
-        description: "Implementação de estratégia tributária para grupo de empresas, resultando em economia fiscal significativa e regularidade perante o fisco."
+        title: "Progressão de Regime",
+        description: "Obtenção de progressão de regime prisional para cliente que cumpria pena em regime fechado, demonstrando bom comportamento e cumprimento dos requisitos legais."
       },
       {
-        title: "Defesa contra Autuação Fiscal",
-        description: "Anulação de auto de infração milionário por suposto planejamento tributário abusivo, comprovando a legalidade das operações empresariais."
+        title: "Livramento Condicional",
+        description: "Concessão de livramento condicional após cumprimento de parte da pena, garantindo a reintegração social do cliente."
       },
       {
-        title: "Recuperação de Créditos Tributários",
-        description: "Recuperação de créditos tributários significativos para indústria de grande porte, com reconhecimento judicial do direito à compensação."
+        title: "Remição de Pena",
+        description: "Reconhecimento de direito à remição de pena por estudo e trabalho, reduzindo o tempo de cumprimento da pena."
+      }
+    ]
+  },
+  {
+    title: "Direito Previdenciário",
+    icon: <FileText className="h-10 w-10 text-lawgold-400" />,
+    slug: "direito-previdenciario",
+    description: "Atuação voltada à obtenção e revisão de benefícios previdenciários, como aposentadorias, auxílios e pensões.",
+    detailedDescription: [
+      "O Direito Previdenciário trata dos direitos relacionados à Previdência Social, incluindo aposentadorias, pensões, auxílios e outros benefícios previdenciários.",
+      "Atuamos na concessão de benefícios junto ao INSS, revisão de benefícios já concedidos, contagem de tempo de contribuição, entre outros temas previdenciários.",
+      "Nossa equipe está preparada para analisar cada caso específico e indicar a melhor estratégia para obtenção ou revisão do benefício previdenciário."
+    ],
+    cases: [
+      {
+        title: "Concessão de Aposentadoria",
+        description: "Obtenção de aposentadoria por tempo de contribuição após análise detalhada da documentação e comprovação do tempo de contribuição."
+      },
+      {
+        title: "Revisão de Benefício",
+        description: "Revisão de valor de aposentadoria, obtendo aumento significativo no valor do benefício após comprovação de erro no cálculo inicial."
+      },
+      {
+        title: "Auxílio-Doença",
+        description: "Concessão de auxílio-doença após perícia médica, garantindo o direito ao benefício para cliente com limitações temporárias para o trabalho."
+      }
+    ]
+  },
+  {
+    title: "Direito do Consumidor",
+    icon: <ShoppingCart className="h-10 w-10 text-lawgold-400" />,
+    slug: "direito-consumidor",
+    description: "Defesa dos direitos do consumidor em situações de cobrança indevida, vícios em produtos ou serviços, cláusulas abusivas e relações contratuais desequilibradas.",
+    detailedDescription: [
+      "O Direito do Consumidor protege as relações de consumo, garantindo direitos básicos como proteção contra práticas abusivas, vícios em produtos e serviços, e cobranças indevidas.",
+      "Atuamos em ações de indenização por danos materiais e morais, revisão de contratos, cancelamento de dívidas, entre outros temas do Direito do Consumidor.",
+      "Nossa equipe está preparada para defender os direitos do consumidor, seja em ações individuais ou coletivas, sempre buscando a melhor solução para cada caso."
+    ],
+    cases: [
+      {
+        title: "Indenização por Vício em Produto",
+        description: "Obtenção de indenização por danos materiais e morais em caso de defeito em produto, garantindo a reparação integral dos prejuízos sofridos."
+      },
+      {
+        title: "Cancelamento de Dívida",
+        description: "Cancelamento de dívida indevida junto a instituição financeira, após comprovação de cobrança abusiva e irregularidades contratuais."
+      },
+      {
+        title: "Revisão de Contrato",
+        description: "Revisão judicial de contrato de plano de saúde, obtendo a redução de mensalidade e a eliminação de cláusulas abusivas."
       }
     ]
   }

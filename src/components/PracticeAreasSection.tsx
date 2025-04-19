@@ -1,50 +1,49 @@
-
 import { Link } from "react-router-dom";
-import { Building, Home, GraduationCap, Scale, FileText, Users, ArrowRight } from "lucide-react";
+import { Scale, Home, Users, FileText, Shield, ShoppingCart, ArrowRight } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const practiceAreas = [
   {
-    title: "Direito Empresarial",
-    description: "Nossa equipe especializada entende as complexidades legais que empresas enfrentam e oferece soluções personalizadas para proteger seus interesses comerciais e garantir conformidade legal.",
-    icon: <Building className="h-10 w-10 text-lawblack-800" />,
+    title: "Direito Criminal",
+    description: "Atuação na defesa de direitos e garantias individuais em investigações, processos criminais e júris, com acompanhamento desde o inquérito policial até a sentença, sempre buscando um julgamento justo e dentro da legalidade.",
+    icon: <Scale className="h-10 w-10 text-lawblack-800" />,
     className: "service-gold",
-    slug: "direito-empresarial"
-  },
-  {
-    title: "Direito Imobiliário",
-    description: "Assessoria completa em questões de propriedade, contratos de compra e venda, locação, regularização de imóveis e resolução de conflitos relacionados a propriedades.",
-    icon: <Home className="h-10 w-10 text-white" />,
-    className: "service-dark",
-    slug: "direito-imobiliario"
-  },
-  {
-    title: "Direito Educacional",
-    description: "Representação jurídica para instituições de ensino e estudantes, garantindo conformidade legal e defesa de direitos educacionais em todos os níveis acadêmicos.",
-    icon: <GraduationCap className="h-10 w-10 text-white" />,
-    className: "service-dark",
-    slug: "direito-educacional"
+    slug: "direito-criminal"
   },
   {
     title: "Direito Civil",
-    description: "Orientação jurídica em questões familiares, contratos, responsabilidade civil e proteção de direitos pessoais, com foco em soluções eficientes e personalizadas.",
-    icon: <FileText className="h-10 w-10 text-lawblack-800" />,
-    className: "service-gold",
+    description: "Consultoria e representação em temas que envolvem obrigações, responsabilidade civil, contratos, posse e propriedade, oferecendo suporte completo para a defesa dos interesses dos clientes nas relações privadas.",
+    icon: <Home className="h-10 w-10 text-white" />,
+    className: "service-dark",
     slug: "direito-civil"
   },
   {
-    title: "Direito Trabalhista",
-    description: "Defesa de empregados e empregadores, assessoria em relações de trabalho, negociações sindicais e representação em processos administrativos e judiciais.",
+    title: "Direito de Família e Sucessões",
+    description: "Atendimento humanizado em questões como divórcio, guarda, pensão alimentícia, reconhecimento de união estável, inventários e partilhas, buscando sempre soluções justas e equilibradas para as partes envolvidas.",
     icon: <Users className="h-10 w-10 text-white" />,
     className: "service-dark",
-    slug: "direito-trabalhista"
+    slug: "direito-familia-sucessoes"
   },
   {
-    title: "Direito Tributário",
-    description: "Planejamento tributário, consultoria fiscal, defesa em processos administrativos e judiciais, visando economia legal de impostos e regularização fiscal.",
-    icon: <Scale className="h-10 w-10 text-white" />,
+    title: "Execução Penal",
+    description: "Acompanhamento jurídico especializado na fase de cumprimento da pena, incluindo pedidos de progressão de regime, livramento condicional, indulto e demais direitos do apenado, visando assegurar o respeito às normas legais e à dignidade do condenado.",
+    icon: <Shield className="h-10 w-10 text-lawblack-800" />,
+    className: "service-gold",
+    slug: "execucao-penal"
+  },
+  {
+    title: "Direito Previdenciário",
+    description: "Atuação voltada à obtenção e revisão de benefícios previdenciários, como aposentadorias, auxílios e pensões, garantindo que os direitos dos segurados sejam respeitados junto ao INSS e à Justiça.",
+    icon: <FileText className="h-10 w-10 text-white" />,
     className: "service-dark",
-    slug: "direito-tributario"
+    slug: "direito-previdenciario"
+  },
+  {
+    title: "Direito do Consumidor",
+    description: "Defesa dos direitos do consumidor em situações de cobrança indevida, vícios em produtos ou serviços, cláusulas abusivas e relações contratuais desequilibradas, com foco na reparação de danos e no cumprimento do Código de Defesa do Consumidor.",
+    icon: <ShoppingCart className="h-10 w-10 text-white" />,
+    className: "service-dark",
+    slug: "direito-consumidor"
   }
 ];
 
@@ -59,10 +58,10 @@ const PracticeAreasSection = () => {
               <p className="text-lawgold-600 font-medium uppercase text-sm">ÁREAS DE ATUAÇÃO</p>
             </div>
             <h2 className="section-title max-w-2xl">
-              Expertise Jurídica Especializada
+            Especialidades Jurídicas que Fazem a Diferença
             </h2>
             <p className="text-lawblack-600 max-w-2xl">
-              Oferecemos assessoria jurídica em diversas áreas do direito, com profissionais especializados e comprometidos com a excelência no atendimento e resultados para nossos clientes.
+            Atendimento especializado nas principais demandas do Direito, com soluções personalizadas para cada cliente.
             </p>
           </div>
         </AnimatedSection>
