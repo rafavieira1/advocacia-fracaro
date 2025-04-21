@@ -6,7 +6,8 @@ import {
   Baby, Heart, Calendar, Scroll, UserPlus, TreePine, Divide, Gift,
   Umbrella, HandHeart, Clock, RefreshCcw, Calculator,
   Gavel, ArrowUpFromDot, AlertCircle, ScrollText, ArrowUpRight, ShieldCheck, GraduationCap,
-  CircleDollarSign, ClipboardList, Ban, Wrench, AlertOctagon, MessageSquareWarning, XCircle, HeartCrack
+  CircleDollarSign, ClipboardList, Ban, Wrench, AlertOctagon, MessageSquareWarning, XCircle, HeartCrack,
+  Phone, UserRoundSearch
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -343,6 +344,16 @@ const PracticeAreaDetail = () => {
   ];
 
   const criminalServices = [
+    {
+      icon: Phone,
+      title: "Atendimento 24 horas em caso de flagrantes e urgências",
+      description: "Atuação imediata e especializada em prisões em flagrante ou outras situações urgentes, disponível todos os dias, inclusive à noite, fins de semana e feriados."
+    },
+    {
+      icon: UserRoundSearch,
+      title: "Audiência de Custódia",
+      description: "Garantia legal que permite ao preso em flagrante ser apresentado a um juiz em até 24 horas, para avaliar a legalidade da prisão e decidir pela liberdade, prisão preventiva ou medidas alternativas."
+    },
     {
       icon: Scale,
       title: "Defesa em Processos Criminais em Geral",
