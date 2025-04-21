@@ -4,7 +4,7 @@ const LocationSection = () => {
   const officeLocation = {
     lat: -25.2972,
     lng: -54.0939,
-    address: "Av. José Callegari, 820, sl02, Centro, Medianeira-PR"
+    address: "Débora B. Fracaro Advocacia - Avenida José Calegari - Centro, Medianeira - PR"
   };
 
   const handleNavigationClick = (app: string) => {

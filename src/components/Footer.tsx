@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-6">
               <Scale className="h-7 w-7 text-lawgold-400" />
-              <span className="text-2xl font-serif text-gray-900">Lawgis</span>
+              <span className="text-2xl font-serif text-gray-900">Debora Fracaro</span>
             </div>
             
             <p className="text-gray-600 mb-6">
@@ -107,7 +107,7 @@ const Footer = () => {
         </div>
         
         <div className="pt-6 border-t border-gray-200 text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
-          <p>&copy; {currentYear} Lawgis. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} Advocacia Débora B. Fracaro. Todos os direitos reservados.</p>
           
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-lawgold-600 transition-colors">Termos de Uso</a>
