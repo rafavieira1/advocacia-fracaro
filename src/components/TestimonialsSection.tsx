@@ -73,24 +73,21 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="section-padding pb-32 bg-lawblack-950 relative">
       <div className="container-custom relative z-10">
         <AnimatedSection>
-          <div className="text-center mb-24">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="h-px w-12 bg-lawgold-400"></div>
-              <p className="text-lawgold-400 font-medium uppercase text-sm">DEPOIMENTOS</p>
-              <div className="h-px w-12 bg-lawgold-400"></div>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white mb-8">
+          <div className="text-center">
+            <span className="text-lawgold-400 text-sm tracking-wider uppercase mb-4 inline-block">
+              DEPOIMENTOS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
               O Que Nossos Clientes Dizem
             </h2>
-            
-            <p className="text-white/70 max-w-2xl mx-auto">
-              A satisfação de nossos clientes é nossa prioridade. Conheça as opiniões de quem confiou em nosso escritório para resolver questões jurídicas importantes.
+            <p className="text-white/70 text-lg max-w-2xl mx-auto mb-12">
+              A satisfação de nossos clientes é nossa prioridade. Conheça as opiniões de quem 
+              confiou em nosso escritório para resolver questões jurídicas importantes.
             </p>
           </div>
         </AnimatedSection>
         
-        <div className="relative overflow-hidden max-w-4xl mx-auto">
+        <div className="relative overflow-hidden max-w-5xl mx-auto">
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div 
               key={currentIndex}

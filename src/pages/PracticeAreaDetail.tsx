@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Scale, Home, Users, Shield, FileText, ShoppingCart } from "lucide-react";
+import { 
+  ArrowLeft, Scale, Home, Users, Shield, FileText, ShoppingCart, 
+  DollarSign, Coins, Building2, ClipboardCheck, HeartPulse, Briefcase,
+  Baby, Heart, Calendar, Scroll, UserPlus, TreePine, Divide, Gift,
+  Umbrella, HandHeart, Clock, RefreshCcw, Calculator,
+  Gavel, ArrowUpFromDot, AlertCircle, ScrollText, ArrowUpRight, ShieldCheck, GraduationCap,
+  CircleDollarSign, ClipboardList, Ban, Wrench, AlertOctagon, MessageSquareWarning, XCircle, HeartCrack
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import { AnimatedSection } from "@/components/ui/AnimatedSection";
+import { UserCheck, Key, RefreshCw } from "lucide-react";
 
 type Case = {
   title: string;
@@ -99,7 +107,7 @@ const practiceAreasData: PracticeAreaInfo[] = [
     title: "Execução Penal",
     icon: <Shield className="h-10 w-10 text-lawgold-400" />,
     slug: "execucao-penal",
-    description: "Acompanhamento jurídico especializado na fase de cumprimento da pena, incluindo pedidos de progressão de regime, livramento condicional e indulto.",
+    description: "Atuação voltada à defesa dos direitos do condenado durante o cumprimento da pena, com estratégias jurídicas especializadas para garantir benefícios legais e condições dignas de cumprimento.",
     detailedDescription: [
       "A Execução Penal é a fase do processo criminal em que a pena é efetivamente cumprida. É fundamental ter assessoria jurídica especializada para garantir os direitos do condenado.",
       "Atuamos em pedidos de progressão de regime, livramento condicional, indulto, remição de pena, saídas temporárias e outros benefícios previstos na Lei de Execução Penal.",
@@ -149,7 +157,7 @@ const practiceAreasData: PracticeAreaInfo[] = [
     title: "Direito do Consumidor",
     icon: <ShoppingCart className="h-10 w-10 text-lawgold-400" />,
     slug: "direito-consumidor",
-    description: "Defesa dos direitos do consumidor em situações de cobrança indevida, vícios em produtos ou serviços, cláusulas abusivas e relações contratuais desequilibradas.",
+    description: "Defesa dos direitos do consumidor diante de abusos, falhas na prestação de serviços e descumprimentos contratuais, buscando soluções justas e eficazes.",
     detailedDescription: [
       "O Direito do Consumidor protege as relações de consumo, garantindo direitos básicos como proteção contra práticas abusivas, vícios em produtos e serviços, e cobranças indevidas.",
       "Atuamos em ações de indenização por danos materiais e morais, revisão de contratos, cancelamento de dívidas, entre outros temas do Direito do Consumidor.",
@@ -176,6 +184,245 @@ const PracticeAreaDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const [areaInfo, setAreaInfo] = useState<PracticeAreaInfo | null>(null);
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "5546999999999"; // Substitua pelo número correto
+    const message = encodeURIComponent(`Olá! Gostaria de agendar uma consultoria em ${areaInfo?.title}.`);
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+  };
+
+  const executionServices = [
+    {
+      icon: Gavel,
+      title: "Indulto e Comutação de Pena",
+      description: "Elaboração de pedidos formais para concessão de indulto (perdão total da pena) ou comutação (redução parcial da pena), conforme critérios legais e decretos presidenciais."
+    },
+    {
+      icon: ArrowUpFromDot,
+      title: "Progressão de Regime e Liberdade Condicional",
+      description: "Solicitação da mudança do regime fechado para o semiaberto ou aberto, ou do livramento condicional, quando o condenado cumpre os requisitos legais e tem bom comportamento."
+    },
+    {
+      icon: AlertCircle,
+      title: "Defesa em Caso de Falta Grave",
+      description: "Atuação após a acusação de falta disciplinar grave, com defesa técnica em audiência de justificação para evitar prejuízos como a regressão de regime ou perda de benefícios."
+    },
+    {
+      icon: ScrollText,
+      title: "Defesa em Incidentes de Execução",
+      description: "Apresentação de argumentos jurídicos para contestar decisões que afetem o cumprimento da pena, como negativas de progressão, remição ou liberdade."
+    },
+    {
+      icon: ArrowUpRight,
+      title: "Recursos em Execução Penal",
+      description: "Interposição de recursos às decisões judiciais injustas durante a execução da pena, buscando sua revisão em instâncias superiores."
+    },
+    {
+      icon: ShieldCheck,
+      title: "Defesa dos Direitos Fundamentais do Preso",
+      description: "Atuação firme para garantir o respeito aos direitos do preso, como acesso à saúde, educação, assistência jurídica e religiosa."
+    },
+    {
+      icon: GraduationCap,
+      title: "Acompanhamento na Fase de Ressocialização",
+      description: "Apoio jurídico na inserção do apenado em programas de trabalho, estudo e reintegração social, promovendo sua dignidade e reabilitação."
+    }
+  ];
+
+  const pensionServices = [
+    {
+      icon: Umbrella,
+      title: "Auxílios (Reclusão, Doença, Maternidade, Acidente)",
+      description: "Pedido e acompanhamento de auxílios garantidos por lei a segurados e seus dependentes."
+    },
+    {
+      icon: HandHeart,
+      title: "BPC / LOAS (Benefício de Prestação Continuada)",
+      description: "Solicitação do benefício para pessoas com deficiência ou idosos que não possuem meios de subsistência."
+    },
+    {
+      icon: Clock,
+      title: "Aposentadorias",
+      description: "Orientação e requerimento de aposentadorias por idade, tempo de contribuição, rural, híbrida, especial ou da pessoa com deficiência."
+    },
+    {
+      icon: RefreshCcw,
+      title: "Revisões",
+      description: "Pedidos de revisão de aposentadorias e benefícios para corrigir erros e garantir valores justos."
+    },
+    {
+      icon: Calculator,
+      title: "Planejamento Previdenciário",
+      description: "Análise estratégica do tempo e valores de contribuição para garantir a melhor forma e momento de se aposentar."
+    }
+  ];
+
+  const familyServices = [
+    {
+      icon: Baby,
+      title: "Guarda",
+      description: "Atuação para definir ou alterar a guarda dos filhos, sempre priorizando o melhor interesse da criança."
+    },
+    {
+      icon: DollarSign,
+      title: "Alimentos",
+      description: "Ações para fixar, revisar ou cobrar pensão alimentícia de forma justa e conforme a necessidade de quem recebe e a possibilidade de quem paga."
+    },
+    {
+      icon: Heart,
+      title: "Visitas (Convivência Familiar)",
+      description: "Regulamentação do direito de convivência de pais e familiares com os filhos, promovendo o vínculo familiar."
+    },
+    {
+      icon: Scroll,
+      title: "Divórcio Judicial e Extrajudicial",
+      description: "Encerramento do casamento de forma rápida e segura, tanto em cartório quanto pela via judicial, conforme o caso."
+    },
+    {
+      icon: UserPlus,
+      title: "Reconhecimento e Dissolução de União Estável",
+      description: "Reconhecimento ou término legal de união estável, com definição de partilha de bens, guarda e pensão, se necessário."
+    },
+    {
+      icon: TreePine,
+      title: "Planejamento Sucessório",
+      description: "Organização antecipada da herança, com segurança jurídica e economia para os herdeiros."
+    },
+    {
+      icon: Divide,
+      title: "Inventário e Partilha Judicial e Extrajudicial",
+      description: "Regularização da herança e partilha de bens após o falecimento, com agilidade e orientação adequada."
+    },
+    {
+      icon: Gift,
+      title: "Doação em Vida com e sem Reserva de Usufruto",
+      description: "Formalização da doação de bens ainda em vida, com ou sem a manutenção do uso pelo doador."
+    }
+  ];
+
+  const consumerServices = [
+    {
+      icon: CircleDollarSign,
+      title: "Ação de Indenização por Danos Materiais e Morais",
+      description: "Visa compensar prejuízos financeiros e emocionais causados por produtos com defeito, serviços mal prestados ou práticas abusivas."
+    },
+    {
+      icon: ClipboardList,
+      title: "Ação de Cumprimento de Contrato",
+      description: "Obrigação judicial do fornecedor cumprir o que foi prometido, como entrega de produto ou realização de serviço contratado."
+    },
+    {
+      icon: Ban,
+      title: "Ação de Cobrança Indevida",
+      description: "Busca a devolução de valores cobrados de forma irregular, como tarifas não contratadas, duplicidade ou erros em faturas."
+    },
+    {
+      icon: Wrench,
+      title: "Defeitos em Produtos ou Serviços",
+      description: "Atuação para responsabilizar empresas por produtos com defeito, serviços insatisfatórios ou problemas na garantia."
+    },
+    {
+      icon: AlertOctagon,
+      title: "Preços Abusivos e Cobranças Irregulares",
+      description: "Defesa contra preços excessivos, juros abusivos ou cobranças por serviços não contratados."
+    },
+    {
+      icon: MessageSquareWarning,
+      title: "Publicidade Enganosa ou Abusiva",
+      description: "Ações contra promessas falsas ou informações que induzam o consumidor ao erro."
+    },
+    {
+      icon: XCircle,
+      title: "Descumprimento de Contrato",
+      description: "Reparação em casos de atraso na entrega, não realização de serviços ou quebra de condições contratuais."
+    },
+    {
+      icon: HeartCrack,
+      title: "Danos Morais ao Consumidor",
+      description: "Indenização por abalos psicológicos causados por práticas ilegais ou desrespeitosas do fornecedor."
+    }
+  ];
+
+  const criminalServices = [
+    {
+      icon: Scale,
+      title: "Defesa em Processos Criminais em Geral",
+      description: "Atuação completa na defesa de acusados em qualquer fase do processo criminal, garantindo todos os direitos e buscando a melhor solução possível."
+    },
+    {
+      icon: Shield,
+      title: "Acompanhamento em Delegacia e Inquérito Policial",
+      description: "Presença e orientação desde o início da investigação, assegurando que o cliente seja ouvido com respaldo legal e seus direitos respeitados."
+    },
+    {
+      icon: FileText,
+      title: "Ação de Queixa-Crime",
+      description: "Propositura de ação criminal em defesa da honra da vítima, nos casos de ofensas pessoais (injúria, calúnia e difamação), com acompanhamento jurídico estratégico."
+    },
+    {
+      icon: Key,
+      title: "Requerimentos de Liberdade e Revogação de Prisões",
+      description: "Atuação com pedidos de relaxamento de prisão em flagrante, liberdade provisória e revogação de prisões temporárias ou preventivas, quando indevidas."
+    },
+    {
+      icon: UserCheck,
+      title: "Acompanhamento como Assistente de Acusação",
+      description: "Atuação ao lado da vítima em processos criminais, reforçando a acusação para garantir justiça e responsabilização do autor do crime."
+    },
+    {
+      icon: Gavel,
+      title: "Impetração de Habeas Corpus",
+      description: "Medida rápida e eficaz para proteger a liberdade de quem está preso ou ameaçado de prisão ilegal ou abusiva."
+    },
+    {
+      icon: RefreshCw,
+      title: "Recursos e Revisões Criminais",
+      description: "Apresentação de recursos e pedidos de revisão de sentença para corrigir decisões injustas ou ilegais, mesmo após o fim do processo."
+    }
+  ];
+
+  const civilServices = [
+    {
+      icon: DollarSign,
+      title: "Ações de Cobrança (Executória)",
+      description: "Cobrança de dívidas por via judicial, com medidas eficazes para garantir o recebimento."
+    },
+    {
+      icon: FileText,
+      title: "Contratos em Geral",
+      description: "Elaboração e análise de contratos de compra, venda, locação, comodato, prestação de serviços e outros, com segurança jurídica."
+    },
+    {
+      icon: Coins,
+      title: "Indenizações (Moral, Material)",
+      description: "Ações para reparação de danos morais ou materiais sofridos por pessoas físicas ou jurídicas."
+    },
+    {
+      icon: Key,
+      title: "Usucapião",
+      description: "Regularização da posse de imóvel adquirido pelo uso prolongado e ininterrupto, nos termos da lei."
+    },
+    {
+      icon: Building2,
+      title: "Regularização de Imóveis",
+      description: "Ações e procedimentos para formalizar a titularidade de imóveis urbanos ou rurais."
+    },
+    {
+      icon: ClipboardCheck,
+      title: "Tutela e Curatela",
+      description: "Medidas legais para proteção de menores, idosos ou pessoas com incapacidade civil, garantindo seus direitos."
+    },
+    {
+      icon: HeartPulse,
+      title: "Direito Médico e Saúde",
+      description: "Atuação em demandas por fornecimento de medicamentos, tratamentos médicos e indenizações por erro médico ou negativa de atendimento."
+    },
+    {
+      icon: Briefcase,
+      title: "Defesas e Orientações Jurídicas a Empresas",
+      description: "Consultoria preventiva, elaboração de documentos, contratos e defesas judiciais para empresas de diversos setores."
+    }
+  ];
+
   useEffect(() => {
     const area = practiceAreasData.find(area => area.slug === slug);
     setAreaInfo(area || null);
@@ -184,7 +431,6 @@ const PracticeAreaDetail = () => {
       document.title = `Débora B. Fracaro - ${area.title}`;
     }
 
-    // Rola a página para o topo
     window.scrollTo(0, 0);
   }, [slug]);
 
@@ -202,6 +448,19 @@ const PracticeAreaDetail = () => {
       </div>
     );
   }
+
+  const services = 
+    slug === 'direito-civil' 
+      ? civilServices 
+      : slug === 'direito-familia-sucessoes'
+        ? familyServices
+        : slug === 'direito-previdenciario'
+          ? pensionServices
+          : slug === 'execucao-penal'
+            ? executionServices
+            : slug === 'direito-consumidor'
+              ? consumerServices
+              : criminalServices;
 
   return (
     <div className="min-h-screen">
@@ -223,48 +482,49 @@ const PracticeAreaDetail = () => {
         </div>
       </section>
       
-      {/* Detailed description section */}
-      <section className="py-20 bg-white">
+      {/* Services Grid */}
+      <section className="py-24">
         <div className="container-custom">
-          <h2 className="text-3xl font-serif mb-10 text-lawblack-900">Sobre {areaInfo.title}</h2>
-          <div className="space-y-6 text-lawblack-800">
-            {areaInfo.detailedDescription.map((paragraph, index) => (
-              <p key={index} className="text-lg">{paragraph}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <AnimatedSection key={service.title} delay={index * 100}>
+                <div className="group h-full">
+                  <div className="h-full p-8 rounded-2xl border border-lawblack-200 bg-white shadow-sm hover:shadow-xl hover:border-lawgold-400 transition-all duration-300">
+                    <div className="mb-6 inline-flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-lawgold-400/10 to-transparent flex items-center justify-center group-hover:from-lawgold-400/20 group-hover:to-lawgold-400/5 transition-all duration-300">
+                        <service.icon className="w-8 h-8 text-lawgold-600" />
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-medium text-lawblack-900 mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-lawblack-600 leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
-      
-      {/* Case studies section */}
-      <section className="py-20 bg-lawblack-50">
-        <div className="container-custom">
-          <h2 className="text-3xl font-serif mb-10 text-lawblack-900">Exemplos de Casos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {areaInfo.cases.map((case_study, index) => (
-              <Card key={index} className="border-none shadow-lg overflow-hidden">
-                <CardContent className="p-8">
-                  <h3 className="text-xl font-bold mb-4 text-lawblack-900">{case_study.title}</h3>
-                  <p className="text-lawblack-700">{case_study.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA section */}
-      <section className="py-16 bg-lawgold-500">
+
+      {/* CTA section with golden/bronze background */}
+      <section className="py-20 bg-gradient-to-b from-[#D4A676] to-[#C69C6D]">
         <div className="container-custom text-center">
-          <h2 className="text-3xl font-serif mb-6 text-white">Precisa de assessoria em {areaInfo.title}?</h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-serif text-white mb-6">
+            Precisa de assessoria em {areaInfo.title}?
+          </h2>
+          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
             Nossa equipe especializada está pronta para analisar seu caso e oferecer a melhor solução jurídica para sua situação.
           </p>
-          <Link 
-            to="/#contact" 
-            className="inline-block px-8 py-3 bg-lawblack-950 text-white rounded-full hover:bg-lawblack-900 transition-colors"
+          <button
+            onClick={handleWhatsAppClick}
+            className="inline-block px-8 py-4 bg-black text-white rounded-full hover:bg-lawblack-900 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl"
           >
-            Solicitar Consulta Gratuita
-          </Link>
+            Agendar Consultoria
+          </button>
         </div>
       </section>
       

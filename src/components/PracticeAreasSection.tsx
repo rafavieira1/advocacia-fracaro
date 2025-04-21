@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/ui/AnimatedSection";
 const practiceAreas = [
   {
     title: "Direito Criminal",
-    description: "Atuação na defesa de direitos e garantias individuais em investigações, processos criminais e júris, com acompanhamento desde o inquérito policial até a sentença, sempre buscando um julgamento justo e dentro da legalidade.",
+    description: "Atuação na defesa de direitos e garantias individuais em investigações, processos criminais com acompanhamento desde o inquérito policial até a sentença e fases recursais, sempre buscando um julgamento justo e dentro da legalidade.",
     icon: <Scale className="h-10 w-10 text-lawblack-800" />,
     className: "service-gold",
     slug: "direito-criminal"
