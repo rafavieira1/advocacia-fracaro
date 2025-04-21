@@ -2,6 +2,13 @@ import { ArrowRight, Award, Clock, Shield } from "lucide-react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const AboutSection = () => {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "554599700570";
+    const message = "Olá, gostaria de agendar uma consulta.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="about" className="section-padding bg-gray-50">
       <div className="container-custom">
@@ -47,26 +54,26 @@ const AboutSection = () => {
               </div>
               
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-              Minha Trajetória no Direito
+                Minha Trajetória no Direito
               </h2>
               
               <p className="text-lawblack-600 mb-6">
-              Sou Débora Bertolini Fracaro, advogada regularmente inscrita na OAB/PR sob o nº 101.765. 
-              Iniciei minha trajetória no Direito em 2015, com formação concluída em 2019 e aprovação na OAB ainda 
-              durante a graduação.
-              Desde então, venho atuando de forma independente, sempre pautada na ética, na responsabilidade e na busca 
-              por constante aprimoramento. Em março de 2024, fundei o Débora B. Fracaro Advocacia, com o objetivo de 
-              oferecer serviços jurídicos de qualidade e comprometimento.
+                Sou Débora Bertolini Fracaro, advogada regularmente inscrita na OAB/PR sob o nº 101.765. 
+                Iniciei minha trajetória no Direito em 2015, com formação concluída em 2019 e aprovação na OAB ainda 
+                durante a graduação.
+                Desde então, venho atuando de forma independente, sempre pautada na ética, na responsabilidade e na busca 
+                por constante aprimoramento. Em março de 2024, fundei o Débora B. Fracaro Advocacia, com o objetivo de 
+                oferecer serviços jurídicos de qualidade e comprometimento.
               </p>
               
               <p className="text-lawblack-600 mb-8">
-              Possuo quatro pós-graduações concluídas nas áreas de Direito do Trabalho com ênfase em auxílio acidentário, 
-              Direito Previdenciário, Direito Penal e Processo Penal, e Direito de Família e Sucessões. Atualmente, 
-              curso mais quatro especializações: Direito Civil e Processo Civil, Direito Médico e da Saúde, Execução Penal e 
-              Direito das Mulheres, além de diversos cursos complementares.
+                Possuo quatro pós-graduações concluídas nas áreas de Direito do Trabalho com ênfase em auxílio acidentário, 
+                Direito Previdenciário, Direito Penal e Processo Penal, e Direito de Família e Sucessões. Atualmente, 
+                curso mais quatro especializações: Direito Civil e Processo Civil, Direito Médico e da Saúde, Execução Penal e 
+                Direito das Mulheres, além de diversos cursos complementares.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4">
                   <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
                     <Award className="h-6 w-6 text-lawgold-600" />
@@ -92,18 +99,18 @@ const AboutSection = () => {
                 </div>
               </div>
               
-              <a 
-                href="#practice-areas" 
+              <button 
+                onClick={handleWhatsAppClick}
                 className="btn-primary flex items-center gap-2 w-fit"
               >
-                Conheça as Áreas de Atuação
+                Fale Comigo
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </button>
             </div>
           </div>
 
           {/* Quote section - Now full width and centered */}
-          <div className="mt-16 max-w-4xl mx-auto">
+          <div className="mt-24">
             <div className="p-8 border-l-4 border-lawgold-400 bg-white rounded shadow-sm">
               <p className="text-lawblack-800 italic text-lg text-center">
                 "O escritório nasce com a missão de acolher e representar cada cliente com empatia, 

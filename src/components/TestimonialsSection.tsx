@@ -39,44 +39,17 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  const [startIndex, setStartIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [containerHeight, setContainerHeight] = useState("auto");
-  const visibleTestimonials = 2;
   
-  // Atualiza a altura do container quando o componente monta
-  useEffect(() => {
-    const updateHeight = () => {
-      const container = document.querySelector(".testimonials-container");
-      if (container) {
-        const height = container.getBoundingClientRect().height;
-        setContainerHeight(`${height}px`);
-      }
-    };
-
-    // Atualiza após um pequeno delay para garantir que o conteúdo foi renderizado
-    setTimeout(updateHeight, 100);
-    window.addEventListener("resize", updateHeight);
-    
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
-
   const nextTestimonial = () => {
     setDirection(1);
-    if (startIndex + visibleTestimonials < testimonials.length) {
-      setStartIndex(startIndex + 1);
-    } else {
-      setStartIndex(0);
-    }
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
   
   const prevTestimonial = () => {
     setDirection(-1);
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    } else {
-      setStartIndex(testimonials.length - visibleTestimonials);
-    }
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const variants = {
@@ -117,56 +90,48 @@ const TestimonialsSection = () => {
           </div>
         </AnimatedSection>
         
-        <AnimatedSection delay={300}>
-          <div 
-            className="relative overflow-hidden"
-            style={{ height: containerHeight }}
-          >
-            <AnimatePresence initial={false} custom={direction} mode="wait">
-              <motion.div 
-                key={startIndex}
-                custom={direction}
-                variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 }
-                }}
-                className="testimonials-container grid grid-cols-1 lg:grid-cols-2 gap-12 absolute w-full"
-              >
-                {testimonials.slice(startIndex, startIndex + visibleTestimonials).map((testimonial) => (
-                  <div 
-                    key={testimonial.id} 
-                    className="bg-lawblack-900 p-10 rounded-xl border border-lawblack-800 transition-all duration-300 hover:border-lawgold-400"
-                  >
-                    <div className="flex gap-4 items-center mb-8">
-                      <div className="w-16 h-16 rounded-full overflow-hidden">
-                        <img 
-                          src={testimonial.image} 
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover" 
-                        />
-                      </div>
-                      <div>
-                        <h4 className="text-white text-xl font-medium">{testimonial.name}</h4>
-                        <p className="text-white/60">{testimonial.company}</p>
-                        <div className="flex text-lawgold-400 mt-2">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} size={16} fill="currentColor" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-white/80 italic text-lg leading-relaxed">"{testimonial.text}"</p>
+        <div className="relative overflow-hidden max-w-4xl mx-auto">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <motion.div 
+              key={currentIndex}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+              className="w-full"
+            >
+              <div className="bg-lawblack-900 p-10 rounded-xl border border-lawblack-800 transition-all duration-300 hover:border-lawgold-400">
+                <div className="flex flex-col md:flex-row gap-8 items-start min-h-[300px]">
+                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0">
+                    <img 
+                      src={testimonials[currentIndex].image} 
+                      alt={testimonials[currentIndex].name}
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-          
-          <div className="flex justify-center mt-16 gap-6 relative z-20">
+                  <div className="flex flex-col h-full">
+                    <div className="flex text-lawgold-400 mb-4">
+                      {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                        <Star key={i} size={20} fill="currentColor" />
+                      ))}
+                    </div>
+                    <p className="text-white/80 italic text-xl leading-relaxed mb-6 flex-grow">{testimonials[currentIndex].text}</p>
+                    <div>
+                      <h4 className="text-white text-xl font-medium">{testimonials[currentIndex].name}</h4>
+                      <p className="text-white/60">{testimonials[currentIndex].company}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className="flex justify-center gap-4 mt-8">
             <button 
               onClick={prevTestimonial}
               className="w-12 h-12 rounded-full border border-lawgold-500 flex items-center justify-center text-lawgold-500 hover:bg-lawgold-500 hover:text-white transition-all"
@@ -182,10 +147,9 @@ const TestimonialsSection = () => {
               <ArrowRight size={20} />
             </button>
           </div>
-        </AnimatedSection>
+        </div>
       </div>
       
-      {/* Gradient overlay for smooth transition */}
       <div className="absolute left-0 right-0 bottom-0 h-32 z-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(18, 18, 18, 0.5) 50%, white 100%)' }}></div>
     </section>
   );
