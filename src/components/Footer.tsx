@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div>
             <img 
-              src="/images/logo.png" 
+              src="/images/navbar.png" 
               alt="Logo Débora B. Fracaro" 
               className="h-16 mb-6"
             />

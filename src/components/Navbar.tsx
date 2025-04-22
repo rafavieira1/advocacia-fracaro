@@ -52,7 +52,7 @@ const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to={isHome ? "#inicio" : "/"} className="flex items-center">
-          <img src="/images/logo.png" alt="Débora B. Fracaro Advogada" className="h-12" />
+          <img src="/images/navbar.png" alt="Débora B. Fracaro Advogada" className="h-12" />
         </Link>
         
         {/* Desktop navigation */}
@@ -72,7 +72,10 @@ const Navbar = () => {
         <a 
           href="#contact"
           onClick={(e) => handleNavClick(e, "contact")}
-          className="hidden md:block px-6 py-2 bg-lawgold-500 text-white rounded-full hover:bg-lawgold-600 transition-all font-medium text-sm"
+          className="hidden md:block px-6 py-2 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] text-white rounded-full hover:shadow-lg hover:from-[#e0cc96] hover:via-[#f2dda8] hover:to-[#e0cc96] transition-all font-medium text-sm border border-[#e0cc96]/20 animate-shimmer"
+          style={{
+            backgroundSize: '200% 100%',
+          }}
         >
           Entre em contato
         </a>
@@ -110,7 +113,10 @@ const Navbar = () => {
             ))}
             <a 
               href="#contact"
-              className="px-6 py-2 bg-lawgold-500 text-white rounded-full hover:bg-lawgold-600 transition-all font-medium text-center mt-2"
+              className="px-6 py-2 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] text-white rounded-full hover:shadow-lg hover:from-[#e0cc96] hover:via-[#f2dda8] hover:to-[#e0cc96] transition-all font-medium text-center mt-2 border border-[#e0cc96]/20 animate-shimmer"
+              style={{
+                backgroundSize: '200% 100%',
+              }}
               onClick={(e) => {
                 handleNavClick(e, "contact");
                 setMobileMenuOpen(false);
@@ -121,6 +127,18 @@ const Navbar = () => {
           </div>
         )}
       </div>
+
+      <style>
+        {`
+          @keyframes shimmer {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
+          }
+          .animate-shimmer {
+            animation: shimmer 2s linear infinite;
+          }
+        `}
+      </style>
     </header>
   );
 };

@@ -186,7 +186,7 @@ const PracticeAreaDetail = () => {
   const [areaInfo, setAreaInfo] = useState<PracticeAreaInfo | null>(null);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "5546999999999"; // Substitua pelo número correto
+    const phoneNumber = "554599700570"; // Substitua pelo número correto
     const message = encodeURIComponent(`Olá! Gostaria de agendar uma consultoria em ${areaInfo?.title}.`);
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
