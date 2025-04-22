@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div>
             <img 
-              src="/images/navbar.png" 
+              src="/images/footer.png" 
               alt="Logo Débora B. Fracaro" 
               className="h-16 mb-6"
             />
@@ -86,7 +86,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/areas/direito-familia" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
+                <Link to="/areas/direito-familia-sucessoes" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
                   Direito de Família
                 </Link>
               </li>
@@ -120,8 +120,8 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-full border border-lawblack-200 flex items-center justify-center shrink-0">
                   <Mail size={20} />
                 </div>
-                <a href="mailto:contato@deborafracaro.adv.br" className="hover:text-lawgold-600 transition-colors">
-                  contato@deborafracaro.adv.br
+                <a href="mailto:advdeborabertolini@hotmail.com" className="hover:text-lawgold-600 transition-colors">
+                advdeborabertolini@hotmail.com
                 </a>
               </li>
             </ul>
