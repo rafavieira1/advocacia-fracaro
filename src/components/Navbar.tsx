@@ -1,13 +1,24 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/";
+
+  const practiceAreas = [
+    { name: "Direito Criminal", href: "/areas/direito-criminal" },
+    { name: "Direito Civil", href: "/areas/direito-civil" },
+    { name: "Direito de Família e Sucessões", href: "/areas/direito-familia-sucessoes" },
+    { name: "Execução Penal", href: "/areas/execucao-penal" },
+    { name: "Direito Previdenciário", href: "/areas/direito-previdenciario" },
+    { name: "Direito do Consumidor", href: "/areas/direito-consumidor" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,8 +36,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Início", href: "inicio" },
     { name: "Sobre", href: "about" },
-    { name: "Áreas de Atuação", href: "practice-areas" },
-    { name: "Depoimentos", href: "testimonials" },
+    { name: "Áreas de Atuação", href: "practice-areas", hasDropdown: true },
+    { name: "Localização", href: "location" },
     { name: "Contato", href: "contact" }
   ];
 
@@ -56,16 +67,53 @@ const Navbar = () => {
         </Link>
         
         {/* Desktop navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
+            <div
               key={link.name}
-              href={`#${link.href}`}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-white/80 hover:text-lawgold-400 transition-colors text-sm font-medium"
+              className="relative"
+              onMouseEnter={() => link.hasDropdown && setActiveDropdown(link.name)}
+              onMouseLeave={() => {
+                if (link.hasDropdown) {
+                  // Pequeno delay para permitir que o mouse alcance o submenu
+                  setTimeout(() => {
+                    const submenu = document.querySelector('.submenu');
+                    if (submenu && !submenu.matches(':hover')) {
+                      setActiveDropdown(null);
+                    }
+                  }, 100);
+                }
+              }}
             >
-              {link.name}
-            </a>
+              <a
+                href={`#${link.href}`}
+                onClick={(e) => !link.hasDropdown && handleNavClick(e, link.href)}
+                className="text-white/80 hover:text-lawgold-400 transition-colors text-sm font-medium inline-flex items-center gap-1"
+              >
+                {link.name}
+                {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
+              </a>
+
+              {/* Dropdown menu */}
+              {link.hasDropdown && activeDropdown === link.name && (
+                <div 
+                  className="submenu absolute top-full left-0 mt-2 w-72 bg-lawblack-950/95 backdrop-blur-sm rounded-lg shadow-lg border border-lawgold-400/20 py-2"
+                  onMouseEnter={() => setActiveDropdown(link.name)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  {practiceAreas.map((area) => (
+                    <Link
+                      key={area.href}
+                      to={area.href}
+                      className="block px-4 py-2 text-sm text-white/80 hover:text-lawgold-400 hover:bg-white/5 transition-colors"
+                      onClick={() => setActiveDropdown(null)}
+                    >
+                      {area.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </nav>
         
@@ -99,17 +147,36 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-lawblack-950/95 backdrop-blur-sm shadow-md p-5 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={`#${link.href}`}
-                className="text-white/80 hover:text-lawgold-400 transition-colors font-medium py-2"
-                onClick={(e) => {
-                  handleNavClick(e, link.href);
-                  setMobileMenuOpen(false);
-                }}
-              >
-                {link.name}
-              </a>
+              <div key={link.name}>
+                <a
+                  href={`#${link.href}`}
+                  className="text-white/80 hover:text-lawgold-400 transition-colors font-medium py-2 block"
+                  onClick={(e) => {
+                    if (!link.hasDropdown) {
+                      handleNavClick(e, link.href);
+                      setMobileMenuOpen(false);
+                    }
+                  }}
+                >
+                  {link.name}
+                </a>
+                
+                {/* Mobile dropdown items */}
+                {link.hasDropdown && (
+                  <div className="pl-4 mt-2 space-y-2 border-l border-lawgold-400/20">
+                    {practiceAreas.map((area) => (
+                      <Link
+                        key={area.href}
+                        to={area.href}
+                        className="block py-2 text-sm text-white/80 hover:text-lawgold-400 transition-colors"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {area.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <a 
               href="#contact"

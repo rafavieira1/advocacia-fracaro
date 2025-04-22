@@ -521,21 +521,44 @@ const PracticeAreaDetail = () => {
         </div>
       </section>
 
-      {/* CTA section with golden/bronze background */}
-      <section className="py-20 bg-gradient-to-b from-[#D4A676] to-[#C69C6D]">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl font-serif text-white mb-6">
-            Precisa de assessoria em {areaInfo.title}?
-          </h2>
-          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
-            Nossa equipe especializada está pronta para analisar seu caso e oferecer a melhor solução jurídica para sua situação.
-          </p>
-          <button
-            onClick={handleWhatsAppClick}
-            className="inline-block px-8 py-4 bg-black text-white rounded-full hover:bg-lawblack-900 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl"
-          >
-            Agendar Consultoria
-          </button>
+      {/* Modern CTA section with black and gold design */}
+      <section className="relative py-24 overflow-hidden">
+        {/* Background with gradient overlay */}
+        <div 
+          className="absolute inset-0 bg-lawblack-950"
+          style={{
+            backgroundImage: 'url("/images/texture-bg.png")',
+            backgroundBlendMode: 'overlay',
+            backgroundSize: 'cover',
+            opacity: 0.97
+          }}
+        />
+        
+        {/* Decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ccb884] to-transparent opacity-30" />
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ccb884] to-transparent opacity-30" />
+          <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96" />
+          <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-96 h-96" />
+        </div>
+        
+        {/* Content */}
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">
+              Precisa de assessoria em {areaInfo.title}?
+            </h2>
+            <p className="text-white/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              Nossa equipe especializada está pronta para analisar seu caso e oferecer a melhor solução jurídica para sua situação.
+            </p>
+            <button
+              onClick={handleWhatsAppClick}
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#ccb884] text-black rounded-full transition-all duration-300 text-lg font-medium overflow-hidden hover:shadow-[0_0_20px_rgba(204,184,132,0.3)] transform hover:-translate-y-1"
+            >
+              <span className="relative z-10">Agendar Consultoria</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+          </div>
         </div>
       </section>
       
