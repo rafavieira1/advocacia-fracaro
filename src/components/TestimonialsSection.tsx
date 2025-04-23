@@ -70,7 +70,7 @@ const TestimonialsSection = () => {
   };
   
   return (
-    <section id="testimonials" className="section-padding pb-32 bg-lawblack-950 relative">
+    <section id="testimonials" className="section-padding pb-6 bg-lawblack-950 relative">
       <div className="container-custom relative z-10">
         <AnimatedSection>
           <div className="text-center">

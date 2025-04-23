@@ -65,7 +65,7 @@ const AboutSection = () => {
                 Minha Trajetória no Direito
               </h2>
               
-              <p className="text-lawblack-600 mb-6">
+              <p className="text-lawblack-600 mb-6 text-justify">
                 Sou Débora Bertolini Fracaro, advogada regularmente inscrita na OAB/PR sob o nº 101.765. 
                 Iniciei minha trajetória no Direito em 2015, com formação concluída em 2019 e aprovação na OAB ainda 
                 durante a graduação.
@@ -74,7 +74,7 @@ const AboutSection = () => {
                 oferecer serviços jurídicos de qualidade e comprometimento.
               </p>
               
-              <p className="text-lawblack-600 mb-8">
+              <p className="text-lawblack-600 mb-8 text-justify">
                 Possuo quatro pós-graduações concluídas nas áreas de Direito do Trabalho com ênfase em auxílio acidentário, 
                 Direito Previdenciário, Direito Penal e Processo Penal, e Direito de Família e Sucessões. Atualmente, 
                 curso mais quatro especializações: Direito Civil e Processo Civil, Direito Médico e da Saúde, Execução Penal e 
@@ -113,7 +113,7 @@ const AboutSection = () => {
                   <h3 className="text-[#BFA15C] font-medium uppercase text-sm">ENTRE EM CONTATO</h3>
                 </div>
 
-                <div className="flex items-center justify-center gap-3 w-full">
+                <div className="flex items-center gap-3 w-full">
                   <button 
                     onClick={handleWhatsAppClick}
                     className="group relative inline-flex items-center justify-center gap-1 px-3 py-2.5 bg-[#25D366] text-white rounded-full hover:shadow-lg hover:bg-[#20BD5C] transition-all font-medium overflow-hidden transform hover:-translate-y-0.5 text-sm whitespace-nowrap"
