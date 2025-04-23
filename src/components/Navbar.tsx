@@ -97,7 +97,7 @@ const Navbar = () => {
               {/* Dropdown menu */}
               {link.hasDropdown && activeDropdown === link.name && (
                 <div 
-                  className="submenu absolute top-full left-0 mt-2 w-72 bg-lawblack-950/95 backdrop-blur-sm rounded-lg shadow-lg border border-lawgold-400/20 py-2"
+                  className="submenu absolute top-full left-0 mt-2 w-72 bg-lawblack-950 rounded-lg shadow-lg border border-[#BFA15C]/20 py-2 z-50"
                   onMouseEnter={() => setActiveDropdown(link.name)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
@@ -105,7 +105,7 @@ const Navbar = () => {
                     <Link
                       key={area.href}
                       to={area.href}
-                      className="block px-4 py-2 text-sm text-white/80 hover:text-lawgold-400 hover:bg-white/5 transition-colors"
+                      className="block px-4 py-2 text-sm text-white/80 hover:text-[#BFA15C] hover:bg-white/5 transition-colors"
                       onClick={() => setActiveDropdown(null)}
                     >
                       {area.name}

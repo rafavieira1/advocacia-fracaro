@@ -84,11 +84,11 @@ const Hero = () => {
           <div className="lg:w-1/2 relative hidden lg:block">
             <AnimatedSection delay={800}>
               <div className="flex items-center justify-center h-full min-h-[70vh]">
-                <div className="max-w-[600px] w-full mt-4">
+                <div className="w-full">
                   <img 
                     src="/images/logo.png" 
                     alt="Advogados experientes" 
-                    className="w-full rounded-2xl"
+                    className="w-full rounded-2xl max-w-[1200px]"
                   />
                 </div>
               </div>
