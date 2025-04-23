@@ -1,40 +1,18 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
-import PracticeAreaDetail from "./pages/PracticeAreaDetail";
-import { useEffect } from 'react';
-
-const queryClient = new QueryClient();
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainLayout from '@/layouts/MainLayout';
+import HomePage from '@/pages/home';
+import PracticeAreaDetail from '@/pages/practice-areas/detail';
+import NotFound from '@/pages/404';
 
 const App = () => {
-  useEffect(() => {
-    // Garante que a página volte ao topo quando for carregada
-    window.scrollTo(0, 0);
-    // Remove o hash da URL sem recarregar a página
-    if (window.location.hash) {
-      history.replaceState(null, '', window.location.pathname);
-    }
-  }, []);
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/areas/:slug" element={<PracticeAreaDetail />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
+        <Route path="/areas-atuacao/:slug" element={<MainLayout><PracticeAreaDetail /></MainLayout>} />
+        <Route path="*" element={<MainLayout><NotFound /></MainLayout>} />
+      </Routes>
+    </Router>
   );
 };
 

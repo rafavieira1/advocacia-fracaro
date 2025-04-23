@@ -1,29 +1,49 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import PracticeAreasSection from "@/components/PracticeAreasSection";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
+import { useLocation } from "react-router-dom";
+import Hero from "@/components/sections/Hero";
+import AboutSection from "@/components/sections/AboutSection";
+import PracticeAreasSection from "@/components/sections/PracticeAreasSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import AtendimentoSection from "@/components/sections/AtendimentoSection";
+import ContactSection from "@/components/sections/ContactSection";
+import LocationSection from "@/components/sections/LocationSection";
 
-const Home = () => {
+const HomePage = () => {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "Débora B. Fracaro - Advogada";
-  }, []);
+    
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    };
+    
+    handleHashNavigation();
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation);
+    };
+  }, [location]);
 
   return (
     <div className="min-h-screen">
-      <div style={{ backgroundColor: 'red', padding: '20px', textAlign: 'center', color: 'white' }}>
-        <h1>TESTE - PÁGINA HOME</h1>
-      </div>
-      <Navbar />
       <Hero />
-      <PracticeAreasSection />
       <AboutSection />
+      <PracticeAreasSection />
+      <TestimonialsSection />
+      <AtendimentoSection />
       <ContactSection />
-      <Footer />
+      <LocationSection />
     </div>
   );
 };
 
-export default Home; 
+export default HomePage;
