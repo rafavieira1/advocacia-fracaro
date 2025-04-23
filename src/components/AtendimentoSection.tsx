@@ -55,8 +55,8 @@ const AtendimentoSection = () => {
               <div className="group h-full">
                 <div className="relative h-full p-8 rounded-2xl border border-lawgold-400/10 bg-gradient-to-br from-lawblack-800 to-lawblack-900 text-center transition-all duration-300 hover:border-lawgold-400/30 hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] hover:-translate-y-1">
                   <div className="mb-6 inline-flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-lawgold-400/10 to-transparent flex items-center justify-center group-hover:from-lawgold-400/20 group-hover:to-lawgold-400/5 transition-all duration-300">
-                      <step.icon className="w-8 h-8 text-lawgold-400" />
+                    <div className="w-16 h-16 rounded-xl bg-[#BFA15C]/10 flex items-center justify-center group-hover:from-[#BFA15C]/20 group-hover:to-[#BFA15C]/5 transition-all duration-300">
+                      <step.icon className="w-8 h-8 text-[#BFA15C]" />
                     </div>
                   </div>
                   

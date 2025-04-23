@@ -6,8 +6,8 @@ const practiceAreas = [
   {
     title: "Direito Criminal",
     description: "Atuação na defesa de direitos e garantias individuais em investigações, processos criminais com acompanhamento desde o inquérito policial até a sentença e fases recursais, sempre buscando um julgamento justo e dentro da legalidade.",
-    icon: <Scale className="h-10 w-10 text-lawblack-800" />,
-    className: "service-gold",
+    icon: <Scale className="h-10 w-10 text-white" />,
+    className: "bg-gradient-to-br from-[#BFA15C] via-[#8E7744] to-[#BFA15C] text-white",
     slug: "direito-criminal"
   },
   {
@@ -27,8 +27,8 @@ const practiceAreas = [
   {
     title: "Execução Penal",
     description: "Acompanhamento jurídico especializado na fase de cumprimento da pena, incluindo pedidos de progressão de regime, livramento condicional, indulto e demais direitos do apenado, visando assegurar o respeito às normas legais e à dignidade do condenado.",
-    icon: <Shield className="h-10 w-10 text-lawblack-800" />,
-    className: "service-gold",
+    icon: <Shield className="h-10 w-10 text-white" />,
+    className: "bg-gradient-to-br from-[#BFA15C] via-[#8E7744] to-[#BFA15C] text-white",
     slug: "execucao-penal"
   },
   {
@@ -72,7 +72,14 @@ const PracticeAreasSection = () => {
               <Link 
                 to={`/areas/${area.slug}`} 
                 key={index} 
-                className={`card-service ${area.className} cursor-pointer hover:shadow-lg transition-shadow`}
+                className={`card-service ${area.className} cursor-pointer hover:shadow-lg transition-shadow ${
+                  area.slug === 'direito-criminal' ? 'order-first md:order-none' :
+                  area.slug === 'execucao-penal' ? 'order-2 md:order-none' :
+                  area.slug === 'direito-civil' ? 'order-3 md:order-none' :
+                  area.slug === 'direito-familia-sucessoes' ? 'order-4 md:order-none' :
+                  area.slug === 'direito-previdenciario' ? 'order-5 md:order-none' :
+                  'order-last md:order-none'
+                }`}
               >
                 <div className="mb-6">{area.icon}</div>
                 <h3 className="text-2xl font-serif mb-4">{area.title}</h3>

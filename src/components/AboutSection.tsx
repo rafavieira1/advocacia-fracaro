@@ -83,24 +83,24 @@ const AboutSection = () => {
               
               <div className="grid grid-cols-3 gap-4 mb-8">
                 <div className="text-center p-4">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
-                    <Award className="h-6 w-6 text-lawgold-600" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center">
+                    <Award className="h-6 w-6 text-[#BFA15C]" />
                   </div>
                   <h4 className="font-medium mb-1">Excelência</h4>
                   <p className="text-sm text-gray-500">Compromisso com resultados</p>
                 </div>
                 
                 <div className="text-center p-4">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
-                    <Clock className="h-6 w-6 text-lawgold-600" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center">
+                    <Clock className="h-6 w-6 text-[#BFA15C]" />
                   </div>
                   <h4 className="font-medium mb-1">Experiência</h4>
                   <p className="text-sm text-gray-500">Expertise consolidada</p>
                 </div>
                 
                 <div className="text-center p-4">
-                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-lawgold-600" />
+                  <div className="mx-auto mb-3 h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-[#BFA15C]" />
                   </div>
                   <h4 className="font-medium mb-1">Confiança</h4>
                   <p className="text-sm text-gray-500">Relações duradouras</p>
@@ -113,10 +113,10 @@ const AboutSection = () => {
                   <h3 className="text-[#BFA15C] font-medium uppercase text-sm">ENTRE EM CONTATO</h3>
                 </div>
 
-                <div className="flex items-center gap-4 flex-nowrap">
+                <div className="flex items-center justify-center gap-3 w-full">
                   <button 
                     onClick={handleWhatsAppClick}
-                    className="group relative inline-flex items-center justify-center gap-1 px-3 py-2.5 bg-[#25D366] text-white rounded-full hover:shadow-lg hover:bg-[#20BD5C] transition-all font-medium overflow-hidden transform hover:-translate-y-0.5 text-sm"
+                    className="group relative inline-flex items-center justify-center gap-1 px-3 py-2.5 bg-[#25D366] text-white rounded-full hover:shadow-lg hover:bg-[#20BD5C] transition-all font-medium overflow-hidden transform hover:-translate-y-0.5 text-sm whitespace-nowrap"
                   >
                     <span className="relative z-10 flex items-center gap-1">
                       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -139,11 +139,11 @@ const AboutSection = () => {
 
                   <button 
                     onClick={handleEmailClick}
-                    className="group relative inline-flex items-center justify-center gap-1 px-3 py-2.5 bg-[#EA4335] text-white rounded-full hover:shadow-lg hover:bg-[#D93025] transition-all font-medium transform hover:-translate-y-0.5 text-sm"
+                    className="group relative inline-flex items-center justify-center gap-1 px-3 py-2.5 bg-[#EA4335] text-white rounded-full hover:shadow-lg hover:bg-[#D93025] transition-all font-medium transform hover:-translate-y-0.5 text-sm whitespace-nowrap"
                   >
-                    <span className="relative z-10 flex items-center gap-1">
+                    <span className="relative z-10 flex items-center gap-1 whitespace-nowrap">
                       <Mail className="w-4 h-4" />
-                      E-mail
+                      <span className="whitespace-nowrap">E-mail</span>
                     </span>
                   </button>
                 </div>
@@ -161,8 +161,8 @@ const AboutSection = () => {
               </p>
               
               <div className="mt-6 flex items-center justify-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center">
-                  <span className="font-semibold text-lawgold-700">DF</span>
+                <div className="h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center">
+                  <span className="font-semibold text-[#BFA15C]">DF</span>
                 </div>
                 <div>
                   <p className="font-medium">Débora B. Fracaro</p>

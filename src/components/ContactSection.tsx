@@ -33,8 +33,8 @@ const ContactSection = () => {
             
             <div className="space-y-10">
               <div className="flex gap-6 items-center">
-                <div className="h-16 w-16 rounded-full bg-lawgold-100 flex items-center justify-center shrink-0">
-                  <MessageCircle className="h-8 w-8 text-lawgold-600" />
+                <div className="h-16 w-16 rounded-full bg-[#BFA15C]/10 flex items-center justify-center shrink-0">
+                  <MessageCircle className="h-8 w-8 text-[#BFA15C]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-1">Atendimento Rápido</h3>
@@ -45,8 +45,8 @@ const ContactSection = () => {
               </div>
               
               <div className="flex gap-6 items-center">
-                <div className="h-16 w-16 rounded-full bg-lawgold-100 flex items-center justify-center shrink-0">
-                  <Users className="h-8 w-8 text-lawgold-600" />
+                <div className="h-16 w-16 rounded-full bg-[#BFA15C]/10 flex items-center justify-center shrink-0">
+                  <Users className="h-8 w-8 text-[#BFA15C]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-1">Atendimento Personalizado</h3>
@@ -59,13 +59,13 @@ const ContactSection = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={300} className="lg:w-1/2">
-            <div className="bg-lawgold-100 p-8 md:p-12 rounded-xl shadow-lg text-center">
+            <div className="relative p-8 md:p-12 rounded-2xl border border-lawgold-400/10 bg-gradient-to-br from-lawblack-800 to-lawblack-900 text-center transition-all duration-300 hover:border-lawgold-400/30 hover:shadow-[0_0_25px_rgba(0,0,0,0.3)]">
               <div className="mb-8">
-                <div className="bg-white rounded-full p-4 w-20 h-20 flex items-center justify-center mx-auto mb-6">
-                  <MessageCircle className="h-10 w-10 text-lawgold-600" />
+                <div className="w-16 h-16 rounded-xl bg-[#BFA15C]/10 flex items-center justify-center mx-auto mb-6 group-hover:from-[#BFA15C]/20 group-hover:to-[#BFA15C]/5 transition-all duration-300">
+                  <MessageCircle className="h-8 w-8 text-[#BFA15C]" />
                 </div>
-                <h3 className="text-3xl font-serif mb-4 text-gray-900">Fale Conosco pelo WhatsApp</h3>
-                <p className="text-gray-600 mb-8">
+                <h3 className="text-2xl font-serif mb-4 text-white">Fale Conosco pelo WhatsApp</h3>
+                <p className="text-white/70 mb-8">
                   Clique no botão abaixo para iniciar uma conversa com nossa equipe
                 </p>
               </div>
@@ -78,7 +78,7 @@ const ContactSection = () => {
                 Iniciar Conversa no WhatsApp
               </button>
               
-              <p className="text-gray-500 text-sm mt-4">
+              <p className="text-white/50 text-sm mt-4">
                 Horário de atendimento: Segunda a sexta das 9:00 às 11:30 e das 14h às 17h
               </p>
             </div>

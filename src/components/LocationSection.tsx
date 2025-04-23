@@ -47,8 +47,8 @@ const LocationSection = () => {
             
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
-                <div className="h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="h-6 w-6 text-lawgold-600" />
+                <div className="h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center shrink-0 mt-1">
+                  <MapPin className="h-6 w-6 text-[#BFA15C]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-1">Endereço</h3>
@@ -59,8 +59,8 @@ const LocationSection = () => {
               </div>
               
               <div className="flex gap-4 items-start">
-                <div className="h-12 w-12 rounded-full bg-lawgold-100 flex items-center justify-center shrink-0 mt-1">
-                  <Navigation className="h-6 w-6 text-lawgold-600" />
+                <div className="h-12 w-12 rounded-full bg-[#BFA15C]/10 flex items-center justify-center shrink-0 mt-1">
+                  <Navigation className="h-6 w-6 text-[#BFA15C]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-medium text-gray-900 mb-1">Como Chegar</h3>
