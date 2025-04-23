@@ -18,7 +18,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="section-padding bg-gray-50">
+    <section id="about" className="section-padding pb-2 bg-gray-50">
       <div className="container-custom">
         <AnimatedSection>
           <div className="flex flex-col lg:flex-row gap-12 items-start">

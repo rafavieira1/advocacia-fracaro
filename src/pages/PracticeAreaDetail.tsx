@@ -480,11 +480,11 @@ const PracticeAreaDetail = () => {
       {/* Hero section */}
       <section className="bg-lawblack-950 pt-40 pb-20">
         <div className="container-custom">
-          <Link to="/#practice-areas" className="text-lawgold-400 hover:underline inline-flex items-center gap-2 mb-8">
+          <Link to="/#practice-areas" className="text-[#BFA15C] hover:text-[#DFC686] inline-flex items-center gap-2 mb-8 transition-colors">
             <ArrowLeft size={20} /> Voltar para áreas de atuação
           </Link>
           <div className="flex items-center gap-4 mb-6">
-            <div className="bg-lawgold-500/20 p-4 rounded-full">
+            <div className="text-[#BFA15C]">
               {areaInfo.icon}
             </div>
             <h1 className="text-4xl md:text-5xl font-serif text-white">{areaInfo.title}</h1>
@@ -494,17 +494,15 @@ const PracticeAreaDetail = () => {
       </section>
       
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="section-padding bg-white relative">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <AnimatedSection key={service.title} delay={index * 100}>
                 <div className="group h-full">
-                  <div className="h-full p-8 rounded-2xl border border-lawblack-200 bg-white shadow-sm hover:shadow-xl hover:border-lawgold-400 transition-all duration-300">
-                    <div className="mb-6 inline-flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-lawgold-400/10 to-transparent flex items-center justify-center group-hover:from-lawgold-400/20 group-hover:to-lawgold-400/5 transition-all duration-300">
-                        <service.icon className="w-8 h-8 text-lawgold-600" />
-                      </div>
+                  <div className="h-full p-8 rounded-2xl border border-[#BFA15C]/10 bg-white shadow-sm hover:shadow-xl hover:border-[#BFA15C] transition-all duration-300">
+                    <div className="mb-6">
+                      <service.icon className="w-8 h-8 text-[#BFA15C]" />
                     </div>
                     
                     <h3 className="text-xl font-medium text-lawblack-900 mb-4">
@@ -536,10 +534,8 @@ const PracticeAreaDetail = () => {
         
         {/* Decorative elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ccb884] to-transparent opacity-30" />
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ccb884] to-transparent opacity-30" />
-          <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96" />
-          <div className="absolute -right-32 top-1/2 -translate-y-1/2 w-96 h-96" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA15C] to-transparent opacity-30" />
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#BFA15C] to-transparent opacity-30" />
         </div>
         
         {/* Content */}
@@ -553,10 +549,10 @@ const PracticeAreaDetail = () => {
             </p>
             <button
               onClick={handleWhatsAppClick}
-              className="group relative inline-flex items-center justify-center px-8 py-4 bg-[#ccb884] text-black rounded-full transition-all duration-300 text-lg font-medium overflow-hidden hover:shadow-[0_0_20px_rgba(204,184,132,0.3)] transform hover:-translate-y-1"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] text-black rounded-full transition-all duration-300 text-lg font-medium overflow-hidden hover:shadow-[0_0_20px_rgba(191,161,92,0.3)] transform hover:-translate-y-1"
             >
               <span className="relative z-10">Agendar Consultoria</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </div>
         </div>

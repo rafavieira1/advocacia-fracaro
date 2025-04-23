@@ -22,7 +22,7 @@ const Hero = () => {
         style={{ opacity: 0.95 }}
       ></div>
 
-      <div className="container-custom relative z-10 py-12">
+      <div className="container-custom relative z-10 py-12 pt-32">
         <div className="flex flex-col items-center text-center lg:text-left lg:items-start lg:flex-row">
           {/* Logo Section - Only centered on mobile */}
           <AnimatedSection className="w-full max-w-[380px] mb-12 lg:hidden">
@@ -83,12 +83,14 @@ const Hero = () => {
           {/* Logo Section - Only visible on desktop */}
           <div className="lg:w-1/2 relative hidden lg:block">
             <AnimatedSection delay={800}>
-              <div className="max-w-[500px] mx-auto">
-                <img 
-                  src="/images/logo.png" 
-                  alt="Advogados experientes" 
-                  className="w-full rounded-2xl"
-                />
+              <div className="flex items-center justify-center h-full min-h-[70vh]">
+                <div className="max-w-[600px] w-full mt-4">
+                  <img 
+                    src="/images/logo.png" 
+                    alt="Advogados experientes" 
+                    className="w-full rounded-2xl"
+                  />
+                </div>
               </div>
             </AnimatedSection>
           </div>

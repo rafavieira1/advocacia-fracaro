@@ -58,7 +58,7 @@ const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-lawblack-950/95 backdrop-blur-sm py-3 shadow-md" : "bg-transparent py-6"
+        isScrolled ? "bg-lawblack-950 backdrop-blur-sm py-3 shadow-md" : "bg-lawblack-950 py-6"
       )}
     >
       <div className="container-custom flex items-center justify-between">
@@ -194,6 +194,12 @@ const Navbar = () => {
           </div>
         )}
       </div>
+
+      {/* Linha dourada */}
+      <div className={cn(
+        "absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] transition-opacity duration-300",
+        isScrolled ? "opacity-100" : "opacity-0"
+      )}></div>
 
       <style>
         {`

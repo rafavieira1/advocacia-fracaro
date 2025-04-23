@@ -26,12 +26,15 @@ const AtendimentoSection = () => {
   ];
 
   return (
-    <section id="atendimento" className="relative py-24 bg-gradient-to-b from-lawblack-950 to-lawblack-900">
+    <section id="atendimento" className="relative py-24 bg-gradient-to-b from-lawblack-950 to-lawblack-950">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('/subtle-dark-texture.png')] bg-repeat opacity-5"></div>
 
-      {/* Gradient overlay for smooth transition */}
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-lawblack-950 to-transparent"></div>
+      {/* Gradient overlay with texture for smooth transition */}
+      <div className="absolute inset-x-0 -top-24 h-48">
+        <div className="absolute inset-0 bg-[url('/subtle-dark-texture.png')] bg-repeat opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-lawblack-950 to-transparent"></div>
+      </div>
 
       <div className="container-custom relative z-10">
         <AnimatedSection>
