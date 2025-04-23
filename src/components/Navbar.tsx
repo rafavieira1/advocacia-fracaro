@@ -120,7 +120,7 @@ const Navbar = () => {
         <a 
           href="#contact"
           onClick={(e) => handleNavClick(e, "contact")}
-          className="hidden md:block px-6 py-2 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] text-white rounded-full hover:shadow-lg hover:from-[#e0cc96] hover:via-[#f2dda8] hover:to-[#e0cc96] transition-all font-medium text-sm border border-[#e0cc96]/20 animate-shimmer"
+          className="hidden md:block px-6 py-2 bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] text-white rounded-full hover:shadow-lg transition-all font-medium text-sm border border-[#BFA15C]/20 animate-shimmer"
           style={{
             backgroundSize: '200% 100%',
           }}
@@ -180,7 +180,7 @@ const Navbar = () => {
             ))}
             <a 
               href="#contact"
-              className="px-6 py-2 bg-gradient-to-r from-[#ccb884] via-[#e0cc96] to-[#ccb884] text-white rounded-full hover:shadow-lg hover:from-[#e0cc96] hover:via-[#f2dda8] hover:to-[#e0cc96] transition-all font-medium text-center mt-2 border border-[#e0cc96]/20 animate-shimmer"
+              className="px-6 py-2 bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] text-white rounded-full hover:shadow-lg transition-all font-medium text-center mt-2"
               style={{
                 backgroundSize: '200% 100%',
               }}

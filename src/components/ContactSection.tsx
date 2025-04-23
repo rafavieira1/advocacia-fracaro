@@ -17,10 +17,10 @@ const ContactSection = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <AnimatedSection className="lg:w-1/2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-lawgold-400 p-1 rounded-full">
+              <div className="bg-[#BFA15C] p-1 rounded-full">
                 <Handshake className="h-5 w-5 text-white" />
               </div>
-              <p className="text-lawgold-400 font-medium uppercase text-sm tracking-wider">CONTATO</p>
+              <p className="text-[#BFA15C] font-medium uppercase text-sm tracking-wider">CONTATO</p>
             </div>
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium leading-tight mb-8 text-gray-900">

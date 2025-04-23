@@ -54,8 +54,8 @@ const PracticeAreasSection = () => {
         <AnimatedSection>
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-5">
-              <div className="h-px w-12 bg-lawgold-400"></div>
-              <p className="text-lawgold-600 font-medium uppercase text-sm">ÁREAS DE ATUAÇÃO</p>
+              <div className="h-px w-12 bg-[#BFA15C]"></div>
+              <p className="text-[#BFA15C] font-medium uppercase text-sm">ÁREAS DE ATUAÇÃO</p>
             </div>
             <h2 className="section-title max-w-2xl">
             Especialidades Jurídicas que Fazem a Diferença

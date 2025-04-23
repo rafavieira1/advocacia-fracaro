@@ -36,11 +36,11 @@ const AtendimentoSection = () => {
       <div className="container-custom relative z-10">
         <AnimatedSection>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-lawgold-400 text-sm tracking-wider uppercase mb-4 inline-block">
+            <span className="text-[#BFA15C] text-sm tracking-wider uppercase mb-4 inline-block">
               NOSSO PROCESSO
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
-              Como funciona o <span className="text-lawgold-400">atendimento</span>
+              Como funciona o atendimento
             </h2>
             <p className="text-white/70 text-lg mb-16">
               Conheça nosso processo de atendimento, desenvolvido para proporcionar 

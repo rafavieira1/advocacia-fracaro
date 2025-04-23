@@ -38,7 +38,7 @@ const Hero = () => {
             <AnimatedSection>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-6 leading-tight">
                 Advocacia <br />
-                de <span className="text-lawgold-400">Excelência</span> <br />
+                de <span className="bg-gradient-to-r from-[#BFA15C] via-[#DFC686] to-[#BFA15C] text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,0,0,0.3)]">Excelência</span> <br />
                 Para Seu Caso
               </h1>
             </AnimatedSection>
@@ -65,15 +65,15 @@ const Hero = () => {
                   className="btn-secondary flex items-center gap-2"
                 >
                   Me conheça
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 icon-gradient-gold" />
                 </a>
               </div>
             </AnimatedSection>
             
             <AnimatedSection delay={600} className="mt-16">
-              <div className="px-4 py-2 border border-lawgold-400/30 rounded-lg inline-flex items-center gap-3 bg-lawblack-950">
-                <span className="text-lawgold-400 text-xl">★★★★★</span>
-                <div className="border-l border-lawgold-400/30 pl-3">
+              <div className="px-4 py-2 border-2 border-[#BFA15C] rounded-lg inline-flex items-center gap-3 bg-lawblack-950">
+                <span className="text-gradient-gold text-xl">★★★★★</span>
+                <div className="border-l-2 border-[#BFA15C] pl-3">
                   <p className="text-white text-sm">Reconhecido entre os melhores escritórios de Medianeira e região</p>
                 </div>
               </div>

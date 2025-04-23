@@ -74,7 +74,7 @@ const TestimonialsSection = () => {
       <div className="container-custom relative z-10">
         <AnimatedSection>
           <div className="text-center">
-            <span className="text-lawgold-400 text-sm tracking-wider uppercase mb-4 inline-block">
+            <span className="text-[#BFA15C] text-sm tracking-wider uppercase mb-4 inline-block">
               DEPOIMENTOS
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
@@ -102,7 +102,7 @@ const TestimonialsSection = () => {
               }}
               className="w-full"
             >
-              <div className="bg-lawblack-900 p-10 rounded-xl border border-lawblack-800 transition-all duration-300 hover:border-lawgold-400">
+              <div className="bg-lawblack-900 p-10 rounded-xl border border-[#BFA15C] transition-all duration-300 hover:border-[#DFC686]">
                 <div className="flex flex-col md:flex-row gap-8 items-start min-h-[300px]">
                   <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0">
                     <img 
@@ -131,14 +131,14 @@ const TestimonialsSection = () => {
           <div className="flex justify-center gap-4 mt-8">
             <button 
               onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full border border-lawgold-500 flex items-center justify-center text-lawgold-500 hover:bg-lawgold-500 hover:text-white transition-all"
+              className="w-12 h-12 rounded-full border border-[#BFA15C] flex items-center justify-center text-[#BFA15C] hover:bg-[#BFA15C] hover:text-white transition-all"
               aria-label="Depoimento anterior"
             >
               <ArrowLeft size={20} />
             </button>
             <button 
               onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full border border-lawgold-500 flex items-center justify-center text-lawgold-500 hover:bg-lawgold-500 hover:text-white transition-all"
+              className="w-12 h-12 rounded-full border border-[#BFA15C] flex items-center justify-center text-[#BFA15C] hover:bg-[#BFA15C] hover:text-white transition-all"
               aria-label="Próximo depoimento"
             >
               <ArrowRight size={20} />
@@ -146,8 +146,6 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </div>
-      
-      <div className="absolute left-0 right-0 bottom-0 h-32 z-0" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(18, 18, 18, 0.5) 50%, white 100%)' }}></div>
     </section>
   );
 };

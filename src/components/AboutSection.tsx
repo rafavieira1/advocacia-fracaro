@@ -29,7 +29,7 @@ const AboutSection = () => {
                 {/* First vertical image */}
                 <div className="rounded-2xl overflow-hidden">
                   <img 
-                    src="/images/f7068d6c-b08f-44aa-95ba-479e297d6bf2.png" 
+                    src="/images/fotovertical.jpg" 
                     alt="Advogados em reunião" 
                     className="w-full h-[447px] object-cover"
                   />
@@ -57,8 +57,8 @@ const AboutSection = () => {
             {/* Right side content */}
             <div className="lg:w-1/2">
               <div className="flex items-center gap-3 mb-5">
-                <div className="h-px w-12 bg-lawgold-400"></div>
-                <h3 className="text-lawgold-600 font-medium uppercase text-sm">SOBRE</h3>
+                <div className="h-px w-12 bg-[#BFA15C]"></div>
+                <h3 className="text-[#BFA15C] font-medium uppercase text-sm">SOBRE</h3>
               </div>
               
               <h2 className="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
@@ -109,8 +109,8 @@ const AboutSection = () => {
               
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <div className="h-px w-12 bg-lawgold-400"></div>
-                  <h3 className="text-lawgold-600 font-medium uppercase text-sm">ENTRE EM CONTATO</h3>
+                  <div className="h-px w-12 bg-[#BFA15C]"></div>
+                  <h3 className="text-[#BFA15C] font-medium uppercase text-sm">ENTRE EM CONTATO</h3>
                 </div>
 
                 <div className="flex items-center gap-4 flex-wrap">
@@ -153,7 +153,7 @@ const AboutSection = () => {
 
           {/* Quote section - Now full width and centered */}
           <div className="mt-24">
-            <div className="p-8 border-l-4 border-lawgold-400 bg-white rounded shadow-sm">
+            <div className="p-8 border-l-4 border-[#BFA15C] bg-white rounded shadow-sm">
               <p className="text-lawblack-800 italic text-lg text-center">
                 "O escritório nasce com a missão de acolher e representar cada cliente com empatia, 
                 excelência técnica e responsabilidade, oferecendo soluções jurídicas personalizadas, 
