@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from '@/layouts/MainLayout';
-import HomePage from '@/pages/home.tsx';
+import HomePage from '@/pages/Home';  // Note o H maiúsculo
 import PracticeAreaDetail from '@/pages/practice-areas/detail';
 import NotFound from '@/pages/404';
+
+// ... resto do código ...
 
 const App = () => {
   return (
