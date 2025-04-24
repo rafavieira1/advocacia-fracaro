@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from '@/layouts/MainLayout';
-import HomePage from '@/pages/home';
+import HomePage from '@/pages/home.tsx';
 import PracticeAreaDetail from '@/pages/practice-areas/detail';
 import NotFound from '@/pages/404';
 
