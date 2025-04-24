@@ -63,7 +63,7 @@ const Navbar = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to={isHome ? "#inicio" : "/"} className="flex items-center">
-          <img src="/src/assets/images/navbar.png" alt="Débora B. Fracaro Advogada" className="h-12" />
+          <img src="/images/navbar.png" alt="Débora B. Fracaro Advogada" className="h-12" />
         </Link>
         
         {/* Desktop navigation */}

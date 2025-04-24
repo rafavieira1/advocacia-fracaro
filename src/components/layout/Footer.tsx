@@ -16,9 +16,9 @@ const Footer = () => {
           {/* Logo e Descrição */}
           <div>
             <img 
-              src="/src/assets/images/footer.png" 
-              alt="Logo Débora B. Fracaro" 
-              className="h-16 mb-6"
+              src="/images/footer.png" 
+              alt="Débora B. Fracaro Advogada" 
+              className="h-24 mb-6"
             />
             <p className="text-lawblack-600 mb-6">
               Advocacia especializada e comprometida com a excelência no atendimento 

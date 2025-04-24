@@ -29,7 +29,7 @@ const AboutSection = () => {
                 {/* First vertical image */}
                 <div className="rounded-2xl overflow-hidden">
                   <img 
-                    src="/src/assets/images/fotovertical.jpg" 
+                    src="/images/fotovertical.jpg" 
                     alt="Advogados em reunião" 
                     className="w-full h-[447px] object-cover"
                   />
@@ -47,7 +47,7 @@ const AboutSection = () => {
               {/* Bottom horizontal image */}
               <div className="rounded-2xl overflow-hidden w-full">
                 <img 
-                  src="/src/assets/images/aboutinferior.png" 
+                  src="/images/aboutinferior.png" 
                   alt="Advogada em pé" 
                   className="w-full h-[280px] object-cover"
                 />
