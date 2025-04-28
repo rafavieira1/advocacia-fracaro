@@ -11,20 +11,20 @@ const Footer = () => {
 
   return (
     <footer className="bg-white relative">
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container-custom py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Logo e Descrição */}
           <div>
             <img 
               src="/images/footer.png" 
               alt="Débora B. Fracaro Advogada" 
-              className="h-24 mb-6"
+              className="h-16 mb-3"
             />
-            <p className="text-lawblack-600 mb-6">
+            <p className="text-lawblack-600 mb-3 text-sm">
               Advocacia especializada e comprometida com a excelência no atendimento 
               e na defesa dos interesses de nossos clientes.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               <a 
                 href="https://www.instagram.com/adv.deborabertolini/" 
                 target="_blank" 
@@ -46,8 +46,8 @@ const Footer = () => {
 
           {/* Links Rápidos */}
           <div>
-            <h3 className="text-lg font-medium text-lawblack-900 mb-6">Links Rápidos</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base font-medium text-lawblack-900 mb-3">Links Rápidos</h3>
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/#inicio" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
                   Início
@@ -73,8 +73,8 @@ const Footer = () => {
 
           {/* Áreas de Atuação */}
           <div>
-            <h3 className="text-lg font-medium text-lawblack-900 mb-6">Áreas de Atuação</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base font-medium text-lawblack-900 mb-3">Áreas de Atuação</h3>
+            <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/areas/direito-criminal" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
                   Direito Criminal
@@ -100,8 +100,8 @@ const Footer = () => {
 
           {/* Contato */}
           <div>
-            <h3 className="text-lg font-medium text-lawblack-900 mb-6">Contato</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base font-medium text-lawblack-900 mb-3">Contato</h3>
+            <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-3 text-lawblack-600">
                 <div className="w-10 h-10 rounded-full border border-lawblack-200 flex items-center justify-center shrink-0">
                   <MapPin size={20} />
@@ -131,8 +131,8 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="border-t border-lawblack-100">
-        <div className="container-custom py-6">
-          <p className="text-center text-lawblack-500 text-sm">
+        <div className="container-custom py-2">
+          <p className="text-center text-lawblack-500 text-xs">
             © {new Date().getFullYear()} Débora B. Fracaro Advocacia. Todos os direitos reservados.
           </p>
         </div>
