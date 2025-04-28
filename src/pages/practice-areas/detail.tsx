@@ -10,7 +10,6 @@ import {
   Phone, UserRoundSearch
 } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { UserCheck, Key, RefreshCw } from "lucide-react";
 import { PracticeArea } from '@/types';
@@ -457,7 +456,6 @@ const PracticeAreaDetail = () => {
             <ArrowLeft size={20} /> Voltar para página inicial
           </Link>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -551,15 +549,13 @@ const PracticeAreaDetail = () => {
             </p>
             <button
               onClick={handleClick}
-              className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors"
+              className="btn-primary px-8 py-4 rounded-full text-white font-medium text-lg shadow-md hover:shadow-lg transition-all"
             >
               Agendar Consultoria
             </button>
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };
