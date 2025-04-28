@@ -32,6 +32,7 @@ const AboutSection = () => {
                     src="/images/fotovertical.jpg" 
                     alt="Advogados em reunião" 
                     className="w-full h-[447px] object-cover"
+                    loading="lazy"
                   />
                 </div>
                 
@@ -50,6 +51,7 @@ const AboutSection = () => {
                   src="/images/aboutinferior.png" 
                   alt="Advogada em pé" 
                   className="w-full h-[280px] object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

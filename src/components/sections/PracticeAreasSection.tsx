@@ -83,7 +83,7 @@ const PracticeAreasSection = () => {
               >
                 <div className="mb-6">{area.icon}</div>
                 <h3 className="text-2xl font-serif mb-4">{area.title}</h3>
-                <p className="mb-8 opacity-80">{area.description}</p>
+                <p className="mb-8 opacity-80 card-description">{area.description}</p>
                 <span 
                   className="flex items-center gap-2 font-medium hover:text-lawgold-500 transition-colors"
                 >

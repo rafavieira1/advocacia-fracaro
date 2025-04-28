@@ -106,6 +106,7 @@
 .card-service {
   @apply p-6 md:p-8 lg:p-10 rounded-xl h-full;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: justify;
 }
 
 .card-service:hover {
@@ -119,4 +120,9 @@
 
 .service-dark {
   @apply bg-lawblack-900 text-white;
+}
+
+.card-description {
+  text-align: justify;
+  hyphens: auto;
 }

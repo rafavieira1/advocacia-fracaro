@@ -1,3 +1,4 @@
+/*
 import { Star, ArrowLeft, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
@@ -151,3 +152,4 @@ const TestimonialsSection = () => {
 };
 
 export default TestimonialsSection;
+*/

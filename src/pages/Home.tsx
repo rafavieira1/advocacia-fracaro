@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import Hero from "@/components/sections/Hero";
 import AboutSection from "@/components/sections/AboutSection";
 import PracticeAreasSection from "@/components/sections/PracticeAreasSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
+// import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import AtendimentoSection from "@/components/sections/AtendimentoSection";
 import ContactSection from "@/components/sections/ContactSection";
 import LocationSection from "@/components/sections/LocationSection";
@@ -38,7 +38,7 @@ const HomePage = () => {
       <Hero />
       <AboutSection />
       <PracticeAreasSection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <AtendimentoSection />
       <ContactSection />
       <LocationSection />
