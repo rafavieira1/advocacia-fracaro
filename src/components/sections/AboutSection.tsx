@@ -57,7 +57,7 @@ const AboutSection = () => {
             </div>
 
             {/* Right side content */}
-            <div className="lg:w-1/2">
+            <div className="w-full max-w-2xl mx-auto">
               <div className="flex items-center gap-3 mb-5">
                 <div className="h-px w-12 bg-[#BFA15C]"></div>
                 <h3 className="text-[#BFA15C] font-medium uppercase text-sm">SOBRE</h3>
