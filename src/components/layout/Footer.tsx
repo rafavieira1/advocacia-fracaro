@@ -1,12 +1,26 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { scrollToSection } from "@/utils/helpers";
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleWhatsAppClick = () => {
     const phoneNumber = "554599700570";
     const message = "Olá, gostaria de agendar uma consulta.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+  };
+
+  // Função para navegação suave para seções
+  const handleSectionClick = (e, sectionId) => {
+    e.preventDefault();
+    if (location.pathname !== "/") {
+      navigate(`/#${sectionId}`);
+    } else {
+      scrollToSection(sectionId);
+    }
   };
 
   return (
@@ -54,19 +68,19 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/#sobre" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
+                <a href="#about" className="text-lawblack-600 hover:text-lawgold-600 transition-colors" onClick={e => handleSectionClick(e, 'about')}>
                   Sobre
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/#areas" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
+                <a href="#practice-areas" className="text-lawblack-600 hover:text-lawgold-600 transition-colors" onClick={e => handleSectionClick(e, 'practice-areas')}>
                   Áreas de Atuação
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/#contato" className="text-lawblack-600 hover:text-lawgold-600 transition-colors">
+                <a href="#contact" className="text-lawblack-600 hover:text-lawgold-600 transition-colors" onClick={e => handleSectionClick(e, 'contact')}>
                   Contato
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
