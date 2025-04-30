@@ -84,6 +84,9 @@ const ContactSection = () => {
               <p className="text-white/50 text-sm mt-4">
                 Horário de atendimento: Segunda a sexta das 9:00 às 11:30 e das 14h às 17h
               </p>
+              <p className="text-[#BFA15C] text-sm mt-1 mb-0 font-medium">
+                Urgências ~ Plantão 24h
+              </p>
             </div>
           </AnimatedSection>
         </div>
