@@ -44,7 +44,7 @@ const Hero = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={200}>
-              <p className="text-white/70 text-lg md:text-xl mb-10 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-white/70 text-lg md:text-xl mb-10 max-w-2xl mx-auto lg:mx-0 text-justify">
                 Nosso escritório está comprometido em oferecer consultoria jurídica personalizada 
                 e de alta qualidade, com soluções inovadoras para proteger seus interesses e garantir seus direitos.
               </p>
