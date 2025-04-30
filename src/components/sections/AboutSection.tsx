@@ -29,7 +29,7 @@ const AboutSection = () => {
                 {/* First vertical image */}
                 <div className="rounded-2xl overflow-hidden">
                   <img 
-                    src="/images/fotovertical.jpg" 
+                    src="/images/esquerdasobre.png" 
                     alt="Advogados em reunião" 
                     className="w-full h-[447px] object-cover"
                     loading="lazy"
@@ -37,11 +37,13 @@ const AboutSection = () => {
                 </div>
                 
                 {/* Second vertical image (Years Experience) */}
-                <div className="bg-black rounded-2xl h-[447px]">
-                  <div className="h-full flex flex-col items-center justify-center text-center">
-                    <span className="text-[64px] leading-none font-serif text-white mb-2">FOTO</span>
-                    <span className="text-white/80 text-base">Imagem Ilustrativa</span>
-                  </div>
+                <div className="rounded-2xl overflow-hidden">
+                  <img 
+                    src="/images/ia2.png" 
+                    alt="Imagem ilustrativa" 
+                    className="w-full h-[447px] object-cover"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               
