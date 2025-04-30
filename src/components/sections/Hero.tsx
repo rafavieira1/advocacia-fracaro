@@ -30,6 +30,9 @@ const Hero = () => {
               src="/images/logo.png"
               alt="Logo do escritório" 
               className="w-full rounded-full"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
             />
           </AnimatedSection>
           
@@ -89,6 +92,9 @@ const Hero = () => {
                     src="/images/logo.png" 
                     alt="Advogados experientes" 
                     className="w-full rounded-2xl max-w-[1200px]"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                   />
                 </div>
               </div>
