@@ -130,7 +130,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-full border border-lawblack-200 flex items-center justify-center shrink-0">
                   <MapPin size={20} />
                 </div>
-                <p>Avenida José Calegari 820, Centro, Medianeira - PR, 85884-000</p>
+                <p>Avenida José Calegari 820 - Sala 02 - Centro, Medianeira - PR, 85720-025</p>
               </li>
               <li className="flex items-center gap-3 text-lawblack-600">
                 <div className="w-10 h-10 rounded-full border border-lawblack-200 flex items-center justify-center shrink-0">
