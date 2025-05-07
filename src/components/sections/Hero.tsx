@@ -27,7 +27,7 @@ const Hero = () => {
           {/* Logo Section - Only centered on mobile */}
           <AnimatedSection className="w-full max-w-[380px] mb-12 lg:hidden">
             <img 
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Logo do escritório" 
               className="w-full rounded-full"
               loading="eager"
@@ -89,7 +89,7 @@ const Hero = () => {
               <div className="flex items-center justify-center h-full min-h-[70vh]">
                 <div className="w-full">
                   <img 
-                    src="/images/logo.png" 
+                    src="/images/logo.webp" 
                     alt="Advogados experientes" 
                     className="w-full rounded-2xl max-w-[1200px]"
                     loading="eager"
