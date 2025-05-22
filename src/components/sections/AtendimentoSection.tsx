@@ -41,9 +41,13 @@ const AtendimentoSection = () => {
       <div className="container-custom relative z-10">
         <AnimatedSection>
           <div className="text-center max-w-3xl mx-auto">
-            <span className="text-[#BFA15C] text-sm tracking-wider uppercase mb-4 inline-block">
-              NOSSO PROCESSO
-            </span>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <div className="h-px w-12 bg-[#BFA15C]"></div>
+              <span className="text-[#BFA15C] text-sm tracking-wider uppercase">
+                NOSSO PROCESSO
+              </span>
+              <div className="h-px w-12 bg-[#BFA15C]"></div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">
               Como funciona o atendimento
             </h2>

@@ -31,9 +31,7 @@ const LocationSection = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-[#BFA15C] p-1 rounded-full">
-                <MapPin className="h-5 w-5 text-white" />
-              </div>
+            <div className="h-px w-12 bg-[#BFA15C]"></div>
               <p className="text-[#BFA15C] font-medium uppercase text-sm tracking-wider">LOCALIZAÇÃO</p>
             </div>
             

@@ -54,10 +54,10 @@ const Hero = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={400}>
-              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <div className="flex flex-row gap-4 justify-center lg:justify-start">
                 <a 
                   href="#contact" 
-                  className="btn-primary flex items-center gap-2"
+                  className="btn-primary flex items-center gap-2 text-sm px-4 py-3 min-w-[120px]"
                 >
                   Tire sua dúvida
                   <ArrowRight className="h-4 w-4" />
@@ -65,7 +65,7 @@ const Hero = () => {
                 
                 <a 
                   href="#about" 
-                  className="btn-secondary flex items-center gap-2"
+                  className="btn-secondary flex items-center gap-2 text-sm px-4 py-3 min-w-[120px]"
                 >
                   Me conheça
                   <ArrowRight className="h-4 w-4 icon-gradient-gold" />

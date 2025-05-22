@@ -37,8 +37,8 @@ const Navbar = () => {
     { name: "Início", href: "inicio" },
     { name: "Sobre", href: "about" },
     { name: "Áreas de Atuação", href: "practice-areas", hasDropdown: true },
-    { name: "Localização", href: "location" },
-    { name: "Contato", href: "contact" }
+    { name: "Contato", href: "contact" },
+    { name: "Localização", href: "location" }
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

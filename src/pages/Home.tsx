@@ -12,7 +12,7 @@ const HomePage = () => {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "Débora B. Fracaro - Advogada";
+    document.title = "Advocacia Fracaro";
     
     const handleHashNavigation = () => {
       const hash = window.location.hash.replace('#', '');

@@ -12,7 +12,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 bg-white">
+    <section id="contact" className="relative py-2 md:py-20 bg-white">
       {/* Gradiente de transição suave */}
       <div className="absolute inset-x-0 -top-96 h-[30rem] bg-gradient-to-b from-lawblack-950 via-lawblack-900/80 via-lawblack-900/60 via-lawblack-900/40 via-lawblack-900/20 via-lawblack-900/10 via-lawblack-900/5 to-white pointer-events-none"></div>
       
@@ -20,9 +20,7 @@ const ContactSection = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <AnimatedSection className="lg:w-1/2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-[#BFA15C] p-1 rounded-full">
-                <Handshake className="h-5 w-5 text-white" />
-              </div>
+              <div className="h-px w-12 bg-[#BFA15C]"></div>
               <p className="text-[#BFA15C] font-medium uppercase text-sm tracking-wider">CONTATO</p>
             </div>
             
@@ -62,7 +60,7 @@ const ContactSection = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={300} className="lg:w-1/2">
-            <div className="relative p-8 md:p-14 rounded-2xl border border-lawgold-400/10 bg-gradient-to-br from-lawblack-800 to-lawblack-900 text-center transition-all duration-300 hover:border-lawgold-400/30 hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] mt-20">
+            <div className="relative p-8 md:p-14 rounded-2xl border border-lawgold-400/10 bg-gradient-to-br from-lawblack-800 to-lawblack-900 text-center transition-all duration-300 hover:border-lawgold-400/30 hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] mt-0 md:mt-20">
               <div className="mb-8">
                 <div className="w-16 h-16 rounded-xl bg-[#BFA15C]/10 flex items-center justify-center mx-auto mb-6 group-hover:from-[#BFA15C]/20 group-hover:to-[#BFA15C]/5 transition-all duration-300">
                   <MessageCircle className="h-8 w-8 text-[#BFA15C]" />
